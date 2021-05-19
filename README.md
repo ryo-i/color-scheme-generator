@@ -1,21 +1,21 @@
-# Nextアプリスターターキット
+# 配色ジェネレーター
 
-React + Next.js + TypeScript + CSS in JS環境
+HSBベースでメインカラー、アクセントカラー、ベースカラーを設定できます。
+
+## 進捗
+
+Nextスターターキットをクローン完了
 
 ## ブログ
 
-【React】Nextスターターキットを作った-1. 全体設定編
+【配色】色相環のH値をいろいろ測ってみた（HSB、マンセル、オストワルト、PCCS、Web配色ツール
 
-※参考：[https://www.i-ryo.com/entry/2021/05/01/184600]
+※参考：[https://www.i-ryo.com/entry/2019/02/24/211711]
 
-【React】Nextスターターキットを作った-2. コンポーネント編
+ 【配色の基本】面積比（メイン、アクセント、ベース）と色相分割【Adobe Color CC】
 
-※参考：[https://www.i-ryo.com/entry/2021/05/02/101424]
-
-【React】Nextスターターキットを作った-3. ページファイル編
-
-※参考：[https://www.i-ryo.com/entry/2021/05/02/102630]
+※参考：[https://www.i-ryo.com/entry/2019/02/28/215606]
 
 ## プレビュー
 
-※参考：[https://next-app-started.vercel.app/]
+※参考：[https://color-scheme-generator.vercel.app]
