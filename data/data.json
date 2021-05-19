@@ -1,10 +1,10 @@
 {
     "head": {
-        "url": "https://next-app-started.vercel.app/"
+        "url": "https://color-scheme-generator.vercel.app"
     },
     "header": {
-        "title":"Nextアプリスターターキット",
-        "text": "Next.js + TypeScript + CSS in JS環境"
+        "title":"配色ジェネレーター",
+        "text": "HSBベースでメインカラー、アクセントカラー、ベースカラーを設定できます。"
     },
     "main": {
         "title":"メインページです",
