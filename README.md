@@ -4,18 +4,14 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-タイトル、説明などの修正 #1
+タイトル、説明などの修正 [#1](https://github.com/ryo-i/color-scheme-generator/issues/1)
 
 ## ブログ
 
-【配色】色相環のH値をいろいろ測ってみた（HSB、マンセル、オストワルト、PCCS、Web配色ツール
+※参考：[【配色】色相環のH値をいろいろ測ってみた（HSB、マンセル、オストワルト、PCCS、Web配色ツール](https://www.i-ryo.com/entry/2019/02/24/211711)
 
-※参考：[https://www.i-ryo.com/entry/2019/02/24/211711]
-
- 【配色の基本】面積比（メイン、アクセント、ベース）と色相分割【Adobe Color CC】
-
-※参考：[https://www.i-ryo.com/entry/2019/02/28/215606]
+※参考：[【配色の基本】面積比（メイン、アクセント、ベース）と色相分割【Adobe Color CC】](https://www.i-ryo.com/entry/2019/02/28/215606)
 
 ## プレビュー
 
-※参考：[https://color-scheme-generator.vercel.app]
+※参考：[配色ジェネレーター]()https://color-scheme-generator.vercel.app
