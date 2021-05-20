@@ -14,4 +14,4 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## プレビュー
 
-※参考：[配色ジェネレーター]()https://color-scheme-generator.vercel.app
+※参考：[配色ジェネレーター](https://color-scheme-generator.vercel.app)
