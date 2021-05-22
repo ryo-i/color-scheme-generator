@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* HSBのH値について検討中 [#2](https://github.com/ryo-i/color-scheme-generator/issues/2)
+* 検証メモ追加 [#2](https://github.com/ryo-i/color-scheme-generator/issues/2#issuecomment-846389975)
 * HSBとRGBの変換について調べ中 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 
 ## ブログ
