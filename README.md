@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* マンセル色相環作ってみた [#5](https://github.com/ryo-i/color-scheme-generator/issues/5)
+* HSB、オストワルト、PCCS、イッテンの図も作成 [#5](https://github.com/ryo-i/color-scheme-generator/issues/5)
 * ワイヤー案3を作成 [#4](https://github.com/ryo-i/color-scheme-generator/issues/4#issuecomment-846522608)
 * HSBとRGBの変換について調べ中 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 * 検証メモ追加 [#2](https://github.com/ryo-i/color-scheme-generator/issues/2#issuecomment-846389975)
