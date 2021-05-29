@@ -1,9 +1,38 @@
 import React, { useEffect }  from 'react';
+import styled from 'styled-components';
 import { hello } from '../modules/hello/hello';
 import Data from '../data/data.json';
 
 
 const innerJson = Data.inner;
+
+
+// Style
+const Figure = styled.figure`
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  margin 0 auto;
+  input {
+    height: 100px;
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .mainColor {
+    width: 25%;
+  }
+  .accentColor {
+    width: 5%;
+  }
+  .baseColor {
+    width: 70%;
+  }
+`;
 
 
 // Component
@@ -13,21 +42,11 @@ function Inner() {
   });
 
   return (
-    <>
-      {
-        innerJson.length >= 1
-          ? innerJson.map((innerJson, index) =>
-            <section key={ index }>
-              <h2>{ innerJson.title }</h2>
-              <p dangerouslySetInnerHTML={{ __html: innerJson.text }}></p>
-            </section>
-          )
-          : <section>
-            <h2>内容が無いよう</h2>
-            <p>へんじがない、ただのしかばねのようだ。</p>
-          </section>
-      }
-    </>
+    <Figure>
+      <input type="color" className="mainColor" value="#ff0000" />
+      <input type="color" className="accentColor" value="#00ff00" />
+      <input type="color" className="baseColor" value="#0000ff" />
+    </Figure>
   );
 }
 
