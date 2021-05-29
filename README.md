@@ -4,11 +4,10 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* HSBとRGBの変換方法の参考記事追加 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 * ワイヤー案5を修正 [#4](https://github.com/ryo-i/color-scheme-generator/issues/4)
 * アクセントカラーの計算方法を検討 [#6](https://github.com/ryo-i/color-scheme-generator/issues/6)
 * HUE/360, Paletton, Adobe Colorの図も作成 [#5](https://github.com/ryo-i/color-scheme-generator/issues/5)
-* HSBとRGBの変換について調べ中 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
-
 
 ## ブログ
 
