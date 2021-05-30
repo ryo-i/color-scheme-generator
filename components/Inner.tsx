@@ -18,7 +18,6 @@ const Figure = styled.figure`
     padding: 0;
     border: none;
     background: transparent;
-
     :hover {
       cursor: pointer;
     }
@@ -43,9 +42,9 @@ function Inner() {
 
   return (
     <Figure>
-      <input type="color" className="mainColor" value="#ff0000" />
-      <input type="color" className="accentColor" value="#00ff00" />
-      <input type="color" className="baseColor" value="#0000ff" />
+      <input type="color" className="mainColor" />
+      <input type="color" className="accentColor" />
+      <input type="color" className="baseColor" />
     </Figure>
   );
 }
