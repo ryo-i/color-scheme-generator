@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* input colorのPC Chromeの線と隙間を消す方法検討中 [#7](https://github.com/ryo-i/color-scheme-generator/issues/7)
+* カラーピッカーをカラーパレットの下に配置してみる [#7](https://github.com/ryo-i/color-scheme-generator/issues/7)
 * HSBとRGBの変換方法の参考記事追加 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 
 ## ブログ

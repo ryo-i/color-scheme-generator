@@ -8,7 +8,7 @@ import Data from '../data/data.json';
 const headerTitle = Data.header.title;
 const headerText = Data.header.text;
 const pageTitle = "カラーパレット";
-const pageText = "パレットを押すとカラーピッカーが開きます";
+const pageText = "カラーピッカーからも色が変更できます";
 
 
 function Home() {
