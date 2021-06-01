@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーのタグを作成 [#8](https://github.com/ryo-i/color-scheme-generator/issues/8)
+* JSXタグを一通り作成 [#8](https://github.com/ryo-i/color-scheme-generator/issues/8)
 * HSBとRGBの変換方法の参考記事追加 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 
 ## ブログ

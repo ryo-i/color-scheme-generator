@@ -8,14 +8,14 @@ const innerJson = Data.inner;
 
 
 // Style
-const Figure = styled.figure`
+const Result = styled.div`
   margin: 0 0 30px;
   .colorPalette {
     display: flex;
     width: 100%;
     margin 0 0 10px;
     div {
-      height: 100px;
+      height: 80px;
     }
     .mainColor {
       width: 25%;
@@ -28,38 +28,56 @@ const Figure = styled.figure`
     }
   }
   .colorPicker {
-    label {
-      margin: 0 1em 0 0;
-      display: inline-block;
+    input, label {
       :hover {
         cursor: pointer;
       }
     }
-    input {
-      margin: 0 0 0 3px;
+    label {
+      margin: 0 1em 0 0;
+      display: inline-block;
+    }
+    input[type="color"] {
+      margin: 0 0.25em 0 0;
       padding: 0;
       border: none;
       background: none;
       appearance: none;
+      width: 2em;
+      height: 1em;
+      ::-webkit-color-swatch-wrapper {
+        margin: 0;
+        padding: 0;
+        width: 2em;
+        height: 1em;
+      }
     }
+
   }
 `;
 
 
 const Generator = styled.div`
   margin: 0 0 30px;
-  dt {
-    margin: 0 0 10px;
-    span {
+  h2 span {
+    font-size: 14px;
     font-weight: normal;
     color: #000;
-    }
   }
-  dd p {
+  p {
     margin: 0;
+  }
+  input, label {
+    :hover {
+      cursor: pointer;
+    }
   }
   input[type='range'] {
     width: 100%;
+  }
+  label {
+    margin: 0 0.5em 0 0;
+    display: inline-block;
   }
 `;
 
@@ -71,37 +89,43 @@ function Inner() {
 
   return (
     <>
-      <Figure>
+      <Result>
         <div className="colorPalette">
           <div className="mainColor" style={{background: "#ff0000"}}></div>
           <div className="accentColor" style={{background: "#00ff00"}}></div>
           <div className="baseColor" style={{background: "#0000ff"}}></div>
         </div>
-        <figcaption className="colorPicker">
+        <p className="colorPicker">
           カラーピッカー：
-          <input type="color" className="mainColor" />
-          <input type="color" className="accentColor" />
-          <input type="color" className="baseColor" />
-        </figcaption>
-      </Figure>
+          <label><input type="color" className="mainColor" />#112233</label>
+          <label><input type="color" className="accentColor" />#112233</label>
+          <label><input type="color" className="baseColor" />#112233</label>
+        </p>
+      </Result>
       <Generator>
-          <dt>
-          メインカラー<span>（R:123, G:123, B:123, #112233）</span>
-          </dt>
-          <dd className="hue">
-            <p>色相(H): 123</p>
-            <input type="range" />
-          </dd>
-          <dd className="saturation">
-            <p>彩度(S): 123</p>
-            <input type="range" />
-          </dd>
-          <dd className="brightness">
-            <p>明度(B): 123</p>
-            <input type="range" />
-          </dd>
-
-
+        <section className="mainColor">
+          <h2>メインカラー<span>（H:123, S:123, B:123）</span></h2>
+          <p>色相(H)：123</p>
+          <input type="range" />
+          <p>彩度(S)：123</p>
+          <input type="range" />
+          <p>明度(B)：123</p>
+          <input type="range" />
+        </section>
+        <section className="accentColor">
+          <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
+          <p>色相環：イッテン色相環</p>
+          <label><input type="radio" name="hueCircle" value="hsb" />HSB</label>
+          <label><input type="radio" name="hueCircle" value="munsell" />マンセル</label>
+          <label><input type="radio" name="hueCircle" value="ostwald" />オストワルト</label>
+          <label><input type="radio" name="hueCircle" value="pccs" />PCCS</label>
+          <label><input type="radio" name="hueCircle" value="itten" defaultChecked />イッテン</label>
+        </section>
+        <section className="baseColor">
+          <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
+          <p>トーン：20%</p>
+          <input type="range" />
+        </section>
       </Generator>
     </>
   );

@@ -7,8 +7,6 @@ import Data from '../data/data.json';
 
 const headerTitle = Data.header.title;
 const headerText = Data.header.text;
-const pageTitle = "カラーパレット";
-const pageText = "カラーピッカーからも色が変更できます";
 
 
 function Home() {
@@ -22,8 +20,6 @@ function Home() {
       </Head>
       <Header />
       <main>
-        <h1>{ pageTitle }</h1>
-        <p dangerouslySetInnerHTML={{ __html: pageText }}></p>
         <Inner />
       </main>
       <Footer />
