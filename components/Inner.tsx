@@ -1,6 +1,5 @@
-import React, { useEffect }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
-import { hello } from '../modules/hello/hello';
 import Data from '../data/data.json';
 
 
@@ -45,6 +44,10 @@ const Result = styled.div`
       appearance: none;
       width: 2em;
       height: 1em;
+      ::-webkit-color-swatch {
+        border-color: #eee;
+        border-radius: 3px;
+      }
       ::-webkit-color-swatch-wrapper {
         margin: 0;
         padding: 0;
@@ -83,23 +86,39 @@ const Generator = styled.div`
 
 // Component
 function Inner() {
+  const [mainColor, setMainColor] = useState(innerJson.mainColor);
+  const [accentColor, setAccentColor] = useState(innerJson.accentColor);
+  const [baseColor, setBaseColor] = useState(innerJson.baseColor);
+
+
   useEffect(() => {
-    hello();
   });
+
+
+  // Change CSS
+  const mainColorPalette = {
+    background: mainColor
+  }
+  const accentColorPalette = {
+    background: accentColor
+  }
+  const baseColorPalette = {
+    background: baseColor
+  }
 
   return (
     <>
       <Result>
         <div className="colorPalette">
-          <div className="mainColor" style={{background: "#ff0000"}}></div>
-          <div className="accentColor" style={{background: "#00ff00"}}></div>
-          <div className="baseColor" style={{background: "#0000ff"}}></div>
+          <div className="mainColor" style={mainColorPalette}></div>
+          <div className="accentColor" style={accentColorPalette}></div>
+          <div className="baseColor" style={baseColorPalette}></div>
         </div>
         <p className="colorPicker">
           カラーピッカー：
-          <label><input type="color" className="mainColor" />#112233</label>
-          <label><input type="color" className="accentColor" />#112233</label>
-          <label><input type="color" className="baseColor" />#112233</label>
+          <label><input type="color" className="mainColor" defaultValue={mainColor} />{mainColor}</label>
+          <label><input type="color" className="accentColor" defaultValue={accentColor} />{accentColor}</label>
+          <label><input type="color" className="baseColor" defaultValue={baseColor} />{baseColor}</label>
         </p>
       </Result>
       <Generator>

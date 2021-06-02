@@ -6,20 +6,11 @@
         "title":"配色ジェネレーター",
         "text": "HSBベースでメインカラー、アクセントカラー、ベースカラーを設定できます。"
     },
-    "main": {
-        "title":"メインページです",
-        "text": "メインページのテキストです。テキストですったらテキストです。"
+    "inner": {
+        "mainColor": "#ff0000",
+        "accentColor": "#00ff00",
+        "baseColor": "#0000ff"
     },
-    "inner": [
-        {
-        "title": "CSS（文字色）",
-        "text": "CSSでタイトルの文字色変更。"
-        },
-        {
-        "title": "JS（文字列）",
-        "text": "JSでテキストの文字列追加「<span class='hello'></span>」"
-        }
-    ],
     "footer": {
         "text": "©️ イイダリョウ"
     }
