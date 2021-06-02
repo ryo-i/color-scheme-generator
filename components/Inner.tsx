@@ -45,7 +45,7 @@ const Result = styled.div`
       width: 2em;
       height: 1em;
       ::-webkit-color-swatch {
-        border-color: #eee;
+        border: #eee 1px solid;
         border-radius: 3px;
       }
       ::-webkit-color-swatch-wrapper {
@@ -53,6 +53,7 @@ const Result = styled.div`
         padding: 0;
         width: 2em;
         height: 1em;
+        border: none;
       }
     }
 
