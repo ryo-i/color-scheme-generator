@@ -96,6 +96,20 @@ function Inner() {
   });
 
 
+  const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const getClassName = e.target.className;
+    const getValue = e.target.value;
+
+    if (getClassName === 'mainColor') {
+      setMainColor(getValue);
+    } else if (getClassName === 'accentColor') {
+      setAccentColor(getValue);
+    } else if (getClassName === 'baseColor') {
+      setBaseColor(getValue);
+    }
+  };
+
+
   // Change CSS
   const mainColorPalette = {
     background: mainColor
@@ -117,9 +131,9 @@ function Inner() {
         </div>
         <p className="colorPicker">
           カラーピッカー：
-          <label><input type="color" className="mainColor" defaultValue={mainColor} />{mainColor}</label>
-          <label><input type="color" className="accentColor" defaultValue={accentColor} />{accentColor}</label>
-          <label><input type="color" className="baseColor" defaultValue={baseColor} />{baseColor}</label>
+          <label><input type="color" className="mainColor" defaultValue={mainColor} onChange={changeColorPicker} />{mainColor}</label>
+          <label><input type="color" className="accentColor" defaultValue={accentColor} onChange={changeColorPicker} />{accentColor}</label>
+          <label><input type="color" className="baseColor" defaultValue={baseColor} onChange={changeColorPicker} />{baseColor}</label>
         </p>
       </Result>
       <Generator>
