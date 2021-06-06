@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import Data from '../data/data.json';
+import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 
 
 const innerJson = Data.inner;
@@ -96,6 +97,7 @@ function Inner() {
 
 
   useEffect(() => {
+    console.log(hexToRgb(mainColor));
   });
 
 
@@ -123,6 +125,8 @@ function Inner() {
   const baseColorPalette = {
     background: baseColor
   }
+
+
 
   return (
     <>

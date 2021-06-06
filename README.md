@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* RGBとカラーコードの変換方法の参考記事追加 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
+* Hex→RGBの変換結果をコンソールに表示 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 * カラーピッカーの変更をフックに反映 [#9](https://github.com/ryo-i/color-scheme-generator/issues/9)
 
 ## ブログ
