@@ -76,6 +76,9 @@ const Generator = styled.div`
       cursor: pointer;
     }
   }
+  input[type='color'] {
+    font-size: 16px;
+  }
   input[type='range'] {
     width: 100%;
   }
