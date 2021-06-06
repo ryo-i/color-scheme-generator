@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import Data from '../data/data.json';
 import { hexToRgb } from '../modules/colorConversion/hexToRgb';
-
+import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
 
 const innerJson = Data.inner;
 
@@ -89,6 +89,7 @@ const Generator = styled.div`
   }
 `;
 
+
 // Component
 function Inner() {
   const [mainColor, setMainColor] = useState(innerJson.mainColor);
@@ -97,7 +98,11 @@ function Inner() {
 
 
   useEffect(() => {
-    console.log(hexToRgb(mainColor));
+    const rgbColors = hexToRgb(mainColor);
+    console.log('R->' + rgbColors.r);
+    console.log('G->' + rgbColors.g);
+    console.log('B->' + rgbColors.b);
+    rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
   });
 
 
