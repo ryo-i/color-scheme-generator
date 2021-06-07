@@ -102,7 +102,8 @@ function Inner() {
     console.log('R->' + rgbColors.r);
     console.log('G->' + rgbColors.g);
     console.log('B->' + rgbColors.b);
-    rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
+    const hsb = rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
+    console.log(hsb);
   });
 
 
