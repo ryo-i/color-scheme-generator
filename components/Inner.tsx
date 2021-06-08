@@ -111,15 +111,29 @@ function Inner() {
 
 
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const getClassName = e.target.name;
-    const getValue = e.target.value;
+    const getName:string = String(e.target.name);
+    const getValue: string = String(e.target.value);
 
-    if (getClassName === 'mainColor') {
+    if (getName === 'mainColor') {
       setMainColor(getValue);
-    } else if (getClassName === 'accentColor') {
+    } else if (getName === 'accentColor') {
       setAccentColor(getValue);
-    } else if (getClassName === 'baseColor') {
+    } else if (getName === 'baseColor') {
       setBaseColor(getValue);
+    }
+  };
+
+
+  const changeMainColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const getName:string = String(e.target.name);
+    const getValue: number = Number(e.target.value);
+
+    if (getName === 'hue') {
+      setHue(getValue);
+    } else if (getName === 'saturation') {
+      setSaturation(getValue);
+    } else if (getName === 'brightness') {
+      setBrightness(getValue);
     }
   };
 
@@ -156,11 +170,11 @@ function Inner() {
         <section className="mainColor">
           <h2>メインカラー<span>（H:{hue}, S:{saturation}, B:{brightness}）</span></h2>
           <p>色相(H)：{hue}</p>
-          <input type="range" name="hue" defaultValue={hue} min="0" max="360" />
+          <input type="range" name="hue" defaultValue={hue} min="0" max="360" onChange={changeMainColor} />
           <p>彩度(S)：{saturation}</p>
-          <input type="range" name="saturation" defaultValue={saturation} min="0" max="100" />
+          <input type="range" name="saturation" defaultValue={saturation} min="0" max="100" onChange={changeMainColor} />
           <p>明度(B)：{brightness} </p>
-          <input type="range" name="brightness" defaultValue={brightness} min="0" max="100" />
+          <input type="range" name="brightness" defaultValue={brightness} min="0" max="100" onChange={changeMainColor} />
         </section>
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
