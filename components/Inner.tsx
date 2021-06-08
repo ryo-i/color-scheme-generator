@@ -99,15 +99,16 @@ function Inner() {
   const [saturation, setSaturation] = useState(innerJson.mainColor.saturation);
   const [brightness, setBrightness] = useState(innerJson.mainColor.brightness);
   const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
+  const [contrast, setContrast] = useState(innerJson.baseColor.contrast);
 
 
   useEffect(() => {
     const rgbColors = hexToRgb(mainColor);
-    console.log('R->' + rgbColors.r);
-    console.log('G->' + rgbColors.g);
-    console.log('B->' + rgbColors.b);
+    // console.log('R->' + rgbColors.r);
+    // console.log('G->' + rgbColors.g);
+    // console.log('B->' + rgbColors.b);
     const hsb = rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
-    console.log(hsb);
+    // console.log(hsb);
   });
 
 
@@ -139,9 +140,15 @@ function Inner() {
   };
 
 
-  const changeHueCircle = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeAccentColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: string = String(e.target.value);
     setHueCircle(getValue);
+  };
+
+
+  const changeBaseColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const getValue: number = Number(e.target.value);
+    setContrast(getValue);
   };
 
 
@@ -186,16 +193,16 @@ function Inner() {
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
           <p>色相環：{hueCircle}</p>
-          <label><input type="radio" name="hueCircle" value="HSB色相環" onChange={changeHueCircle} />HSB</label>
-          <label><input type="radio" name="hueCircle" value="マンセル色相環" onChange={changeHueCircle} />マンセル</label>
-          <label><input type="radio" name="hueCircle" value="オストワルト色相環" onChange={changeHueCircle} />オストワルト</label>
-          <label><input type="radio" name="hueCircle" value="PCCS色相環" onChange={changeHueCircle} />PCCS</label>
-          <label><input type="radio" name="hueCircle" value="イッテン色相環" onChange={changeHueCircle} defaultChecked />イッテン</label>
+          <label><input type="radio" name="hueCircle" value="HSB色相環" onChange={changeAccentColor} />HSB</label>
+          <label><input type="radio" name="hueCircle" value="マンセル色相環" onChange={changeAccentColor} />マンセル</label>
+          <label><input type="radio" name="hueCircle" value="オストワルト色相環" onChange={changeAccentColor} />オストワルト</label>
+          <label><input type="radio" name="hueCircle" value="PCCS色相環" onChange={changeAccentColor} />PCCS</label>
+          <label><input type="radio" name="hueCircle" value="イッテン色相環" onChange={changeAccentColor} defaultChecked />イッテン</label>
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
-          <p>コントラスト：20%</p>
-          <input type="range" name="contrast" />
+          <p>コントラスト：{contrast}%</p>
+          <input type="range" name="contrast" defaultValue={contrast} min="0" max="200" step="5" onChange={changeBaseColor} />
         </section>
       </Generator>
     </>
