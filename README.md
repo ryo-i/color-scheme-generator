@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーHSBの変更をフックに反映 [#9](https://github.com/ryo-i/color-scheme-generator/issues/9)
+* アクセントカラーの色相環をフックと連携 [#9](https://github.com/ryo-i/color-scheme-generator/issues/9)
 * HSBのSとBの計算結果をコンソールに表示 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 
 ## ブログ

@@ -98,6 +98,7 @@ function Inner() {
   const [hue, setHue] = useState(innerJson.mainColor.hue);
   const [saturation, setSaturation] = useState(innerJson.mainColor.saturation);
   const [brightness, setBrightness] = useState(innerJson.mainColor.brightness);
+  const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
 
 
   useEffect(() => {
@@ -135,6 +136,12 @@ function Inner() {
     } else if (getName === 'brightness') {
       setBrightness(getValue);
     }
+  };
+
+
+  const changeHueCircle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const getValue: string = String(e.target.value);
+    setHueCircle(getValue);
   };
 
 
@@ -178,12 +185,12 @@ function Inner() {
         </section>
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
-          <p>色相環：イッテン色相環</p>
-          <label><input type="radio" name="hueCircle" value="hsb" />HSB</label>
-          <label><input type="radio" name="hueCircle" value="munsell" />マンセル</label>
-          <label><input type="radio" name="hueCircle" value="ostwald" />オストワルト</label>
-          <label><input type="radio" name="hueCircle" value="pccs" />PCCS</label>
-          <label><input type="radio" name="hueCircle" value="itten" defaultChecked />イッテン</label>
+          <p>色相環：{hueCircle}</p>
+          <label><input type="radio" name="hueCircle" value="HSB色相環" onChange={changeHueCircle} />HSB</label>
+          <label><input type="radio" name="hueCircle" value="マンセル色相環" onChange={changeHueCircle} />マンセル</label>
+          <label><input type="radio" name="hueCircle" value="オストワルト色相環" onChange={changeHueCircle} />オストワルト</label>
+          <label><input type="radio" name="hueCircle" value="PCCS色相環" onChange={changeHueCircle} />PCCS</label>
+          <label><input type="radio" name="hueCircle" value="イッテン色相環" onChange={changeHueCircle} defaultChecked />イッテン</label>
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
