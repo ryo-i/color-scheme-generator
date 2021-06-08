@@ -7,9 +7,22 @@
         "text": "HSBベースでメインカラー、アクセントカラー、ベースカラーを設定できます。"
     },
     "inner": {
-        "mainColor": "#ff0000",
-        "accentColor": "#00ff00",
-        "baseColor": "#0000ff"
+        "colorPicker": {
+            "mainColor": "#ff0000",
+            "accentColor": "#00ff00",
+            "baseColor": "#0000ff"
+        },
+        "mainColor": {
+            "hue": 0,
+            "saturation": 100,
+            "brightness": 100
+        },
+        "accentColor": {
+            "hueCircle": "itten"
+        },
+        "baseColor": {
+            "contrast": 20
+        }
     },
     "footer": {
         "text": "©️ イイダリョウ"

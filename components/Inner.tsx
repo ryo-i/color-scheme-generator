@@ -92,9 +92,12 @@ const Generator = styled.div`
 
 // Component
 function Inner() {
-  const [mainColor, setMainColor] = useState(innerJson.mainColor);
-  const [accentColor, setAccentColor] = useState(innerJson.accentColor);
-  const [baseColor, setBaseColor] = useState(innerJson.baseColor);
+  const [mainColor, setMainColor] = useState(innerJson.colorPicker.mainColor);
+  const [accentColor, setAccentColor] = useState(innerJson.colorPicker.accentColor);
+  const [baseColor, setBaseColor] = useState(innerJson.colorPicker.baseColor);
+  const [hue, setHue] = useState(innerJson.mainColor.hue);
+  const [saturation, setSaturation] = useState(innerJson.mainColor.saturation);
+  const [brightness, setBrightness] = useState(innerJson.mainColor.brightness);
 
 
   useEffect(() => {
@@ -108,7 +111,7 @@ function Inner() {
 
 
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const getClassName = e.target.className;
+    const getClassName = e.target.name;
     const getValue = e.target.value;
 
     if (getClassName === 'mainColor') {
@@ -144,20 +147,20 @@ function Inner() {
         </div>
         <p className="colorPicker">
           カラーピッカー：
-          <label><input type="color" className="mainColor" defaultValue={mainColor} onChange={changeColorPicker} />{mainColor}</label>
-          <label><input type="color" className="accentColor" defaultValue={accentColor} onChange={changeColorPicker} />{accentColor}</label>
-          <label><input type="color" className="baseColor" defaultValue={baseColor} onChange={changeColorPicker} />{baseColor}</label>
+          <label><input type="color" name="mainColor" defaultValue={mainColor} onChange={changeColorPicker} />{mainColor}</label>
+          <label><input type="color" name="accentColor" defaultValue={accentColor} onChange={changeColorPicker} />{accentColor}</label>
+          <label><input type="color" name="baseColor" defaultValue={baseColor} onChange={changeColorPicker} />{baseColor}</label>
         </p>
       </Result>
       <Generator>
         <section className="mainColor">
-          <h2>メインカラー<span>（H:123, S:123, B:123）</span></h2>
-          <p>色相(H)：123</p>
-          <input type="range" />
-          <p>彩度(S)：123</p>
-          <input type="range" />
-          <p>明度(B)：123</p>
-          <input type="range" />
+          <h2>メインカラー<span>（H:{hue}, S:{saturation}, B:{brightness}）</span></h2>
+          <p>色相(H)：{hue}</p>
+          <input type="range" name="hue" defaultValue={hue} min="0" max="360" />
+          <p>彩度(S)：{saturation}</p>
+          <input type="range" name="saturation" defaultValue={saturation} min="0" max="100" />
+          <p>明度(B)：{brightness} </p>
+          <input type="range" name="brightness" defaultValue={brightness} min="0" max="100" />
         </section>
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
@@ -170,8 +173,8 @@ function Inner() {
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
-          <p>トーン：20%</p>
-          <input type="range" />
+          <p>コントラスト：20%</p>
+          <input type="range" name="contrast" />
         </section>
       </Generator>
     </>
