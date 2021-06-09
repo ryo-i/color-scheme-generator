@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Data from '../data/data.json';
 import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
+import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
 
 const innerJson = Data.inner;
 
@@ -108,7 +109,8 @@ function Inner() {
     // console.log('G->' + rgbColors.g);
     // console.log('B->' + rgbColors.b);
     const hsb = rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
-    // console.log(hsb);
+    console.log(hsb);
+    hsbToRgb(hsb.h, hsb.s, hsb.b);
   });
 
 

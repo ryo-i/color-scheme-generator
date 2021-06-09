@@ -4,8 +4,8 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* HSB→RGB作成中（最大値、最小値まで） [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 * ベースカラーのコントラストをフックと連携 [#9](https://github.com/ryo-i/color-scheme-generator/issues/9)
-* HSBのSとBの計算結果をコンソールに表示 [#3](https://github.com/ryo-i/color-scheme-generator/issues/3)
 
 ## ブログ
 
