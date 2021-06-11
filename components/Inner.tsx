@@ -58,7 +58,6 @@ const Result = styled.div`
         border: none;
       }
     }
-
   }
 `;
 
@@ -104,13 +103,10 @@ function Inner() {
 
 
   useEffect(() => {
-    const rgbColors = hexToRgb(mainColor);
-    // console.log('R->' + rgbColors.r);
-    // console.log('G->' + rgbColors.g);
-    // console.log('B->' + rgbColors.b);
-    const hsb = rgbToHsb(rgbColors.r, rgbColors.g, rgbColors.b);
+    const rgb = hexToRgb(mainColor);
+    console.log(rgb);
+    const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
     console.log(hsb);
-    hsbToRgb(hsb.h, hsb.s, hsb.b);
   });
 
 
@@ -134,6 +130,9 @@ function Inner() {
 
     if (getName === 'hue') {
       setHue(getValue);
+      const rgb = hsbToRgb(getValue, saturation, brightness);
+      console.log(rgb);
+
     } else if (getName === 'saturation') {
       setSaturation(getValue);
     } else if (getName === 'brightness') {
