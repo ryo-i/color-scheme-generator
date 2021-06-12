@@ -4,6 +4,7 @@ import Data from '../data/data.json';
 import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
 import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
+import { rgbToHex } from '../modules/colorConversion/rgbToHex';
 
 const innerJson = Data.inner;
 
@@ -132,7 +133,8 @@ function Inner() {
       setHue(getValue);
       const rgb = hsbToRgb(getValue, saturation, brightness);
       console.log(rgb);
-
+      const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+      console.log(hex);
     } else if (getName === 'saturation') {
       setSaturation(getValue);
     } else if (getName === 'brightness') {
