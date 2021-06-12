@@ -73,6 +73,9 @@ const Generator = styled.div`
   p {
     margin: 0;
   }
+  .colorPalette {
+    border: 1px solid #eee;
+  }
   input, label {
     :hover {
       cursor: pointer;
@@ -129,17 +132,22 @@ function Inner() {
     const getName:string = String(e.target.name);
     const getValue: number = Number(e.target.value);
 
+    let rgb: {r: number, g: number, b: number};
     if (getName === 'hue') {
       setHue(getValue);
-      const rgb = hsbToRgb(getValue, saturation, brightness);
-      console.log(rgb);
-      const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
-      console.log(hex);
+      rgb = hsbToRgb(getValue, saturation, brightness);
     } else if (getName === 'saturation') {
       setSaturation(getValue);
+      rgb = hsbToRgb(hue, getValue, brightness);
     } else if (getName === 'brightness') {
       setBrightness(getValue);
+      rgb = hsbToRgb(hue, saturation, getValue);
     }
+    console.log(rgb);
+
+    const hex: string = rgbToHex(rgb.r, rgb.g, rgb.b);
+    console.log(hex);
+    setMainColor(hex);
   };
 
 
