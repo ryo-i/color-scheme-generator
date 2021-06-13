@@ -186,20 +186,20 @@ function Inner() {
         </div>
         <p className="colorPicker">
           カラーピッカー：
-          <label><input type="color" name="mainColor" defaultValue={mainColor} onChange={changeColorPicker} />{mainColor}</label>
-          <label><input type="color" name="accentColor" defaultValue={accentColor} onChange={changeColorPicker} />{accentColor}</label>
-          <label><input type="color" name="baseColor" defaultValue={baseColor} onChange={changeColorPicker} />{baseColor}</label>
+          <label><input type="color" name="mainColor" value={mainColor} onChange={changeColorPicker} />{mainColor}</label>
+          <label><input type="color" name="accentColor" value={accentColor} onChange={changeColorPicker} />{accentColor}</label>
+          <label><input type="color" name="baseColor" value={baseColor} onChange={changeColorPicker} />{baseColor}</label>
         </p>
       </Result>
       <Generator>
         <section className="mainColor">
           <h2>メインカラー<span>（H:{hue}, S:{saturation}, B:{brightness}）</span></h2>
           <p>色相(H)：{hue}</p>
-          <input type="range" name="hue" defaultValue={hue} min="0" max="360" onChange={changeMainColor} />
+          <input type="range" name="hue" value={hue} min="0" max="360" onChange={changeMainColor} />
           <p>彩度(S)：{saturation}</p>
-          <input type="range" name="saturation" defaultValue={saturation} min="0" max="100" onChange={changeMainColor} />
+          <input type="range" name="saturation" value={saturation} min="0" max="100" onChange={changeMainColor} />
           <p>明度(B)：{brightness} </p>
-          <input type="range" name="brightness" defaultValue={brightness} min="0" max="100" onChange={changeMainColor} />
+          <input type="range" name="brightness" value={brightness} min="0" max="100" onChange={changeMainColor} />
         </section>
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
@@ -213,7 +213,7 @@ function Inner() {
         <section className="baseColor">
           <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
           <p>コントラスト：{contrast}%</p>
-          <input type="range" name="contrast" defaultValue={contrast} min="0" max="200" step="5" onChange={changeBaseColor} />
+          <input type="range" name="contrast" value={contrast} min="0" max="200" step="5" onChange={changeBaseColor} />
         </section>
       </Generator>
     </>
