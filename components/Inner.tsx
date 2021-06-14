@@ -107,10 +107,7 @@ function Inner() {
 
 
   useEffect(() => {
-    const rgb = hexToRgb(mainColor);
-    console.log(rgb);
-    const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
-    console.log(hsb);
+    // 最終的に何もなければuseEffect自体を削除する
   });
 
 
@@ -125,6 +122,12 @@ function Inner() {
     } else if (getName === 'baseColor') {
       setBaseColor(getValue);
     }
+
+    const rgb = hexToRgb(getValue);
+    const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
+    setHue(hsb.h);
+    setSaturation(hsb.s);
+    setBrightness(hsb.b);
   };
 
 
