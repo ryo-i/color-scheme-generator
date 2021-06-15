@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* アクセントカラーでやりたいことをイシューにまとめる [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* dataに各色相環の基準点のH値を追加 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
