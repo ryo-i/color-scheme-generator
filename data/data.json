@@ -18,7 +18,8 @@
             "brightness": 100
         },
         "accentColor": {
-            "hueCircle": "イッテン色相環"
+            "hueCircle": "イッテン色相環",
+            "hueCircleKey": "itten"
         },
         "baseColor": {
             "contrast": 20

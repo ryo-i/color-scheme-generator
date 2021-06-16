@@ -106,9 +106,14 @@ function Inner() {
   const [contrast, setContrast] = useState(innerJson.baseColor.contrast);
 
 
+  // Accent color initial setting
   useEffect(() => {
-    // 最終的に何もなければuseEffect自体を削除する
-  });
+    const getType: string = innerJson.accentColor.hueCircleKey;
+    const keyColor: number[] = innerJson.hueCircle[getType];
+    console.log('hueCircleType->' + getType);
+    console.log('keyColor->' + keyColor);
+    console.log('keyColorLenght->' + keyColor.length);
+  }, []);
 
 
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
