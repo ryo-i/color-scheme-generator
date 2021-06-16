@@ -156,6 +156,11 @@ function Inner() {
 
   const changeAccentColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: string = String(e.target.value);
+    const getType: string = e.target.dataset.hueCircle;
+    const keyColor: number[] = innerJson.hueCircle[getType];
+    console.log('hueCircleType->' + getType);
+    console.log('keyColor->' + keyColor);
+    console.log('keyColorLenght->' + keyColor.length);
     setHueCircle(getValue);
   };
 
@@ -207,11 +212,11 @@ function Inner() {
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
           <p>色相環：{hueCircle}</p>
-          <label><input type="radio" name="hueCircle" value="HSB色相環" onChange={changeAccentColor} />HSB</label>
-          <label><input type="radio" name="hueCircle" value="マンセル色相環" onChange={changeAccentColor} />マンセル</label>
-          <label><input type="radio" name="hueCircle" value="オストワルト色相環" onChange={changeAccentColor} />オストワルト</label>
-          <label><input type="radio" name="hueCircle" value="PCCS色相環" onChange={changeAccentColor} />PCCS</label>
-          <label><input type="radio" name="hueCircle" value="イッテン色相環" onChange={changeAccentColor} defaultChecked />イッテン</label>
+          <label><input type="radio" name="hueCircle" value="HSB色相環" data-hue-circle="hsb" onChange={changeAccentColor} />HSB</label>
+          <label><input type="radio" name="hueCircle" value="マンセル色相環" data-hue-circle="munsell" onChange={changeAccentColor} />マンセル</label>
+          <label><input type="radio" name="hueCircle" value="オストワルト色相環" data-hue-circle="ostwald" onChange={changeAccentColor} />オストワルト</label>
+          <label><input type="radio" name="hueCircle" value="PCCS色相環" data-hue-circle="pccs" onChange={changeAccentColor} />PCCS</label>
+          <label><input type="radio" name="hueCircle" value="イッテン色相環" data-hue-circle="itten" onChange={changeAccentColor} defaultChecked />イッテン</label>
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
