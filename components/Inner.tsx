@@ -5,6 +5,7 @@ import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
 import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
 import { rgbToHex } from '../modules/colorConversion/rgbToHex';
+import { accentColorHue } from '../modules/colorConversion/accentColorHue';
 
 const innerJson = Data.inner;
 
@@ -113,6 +114,14 @@ function Inner() {
     console.log('hueCircleType->' + getType);
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
+
+    const getHue = accentColorHue(keyColor, hue);
+    const getRgb = hsbToRgb(getHue, saturation, brightness);
+    const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
+    console.log('accentColorHue->' + getHue);
+    console.log(getRgb);
+    console.log(getHex);
+    setAccentColor(getHex);
   }, []);
 
 
@@ -161,11 +170,21 @@ function Inner() {
 
   const changeAccentColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: string = String(e.target.value);
-    const getType: string = e.target.dataset.hueCircle;
-    const keyColor: number[] = innerJson.hueCircle[getType];
-    console.log('hueCircleType->' + getType);
+    const hueCircle: string = e.target.dataset.hueCircle;
+    const keyColor: number[] = innerJson.hueCircle[hueCircle];
+    const mainColorHue: number = hue;
+    console.log('hueCircleType->' + hueCircle);
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
+
+    const getHue = accentColorHue(keyColor, mainColorHue);
+    const getRgb = hsbToRgb(getHue, saturation, brightness);
+    const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
+    console.log('accentColorHue->' + getHue);
+    console.log(getRgb);
+    console.log(getHex);
+    setAccentColor(getHex);
+
     setHueCircle(getValue);
   };
 
