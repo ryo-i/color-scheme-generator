@@ -7,7 +7,21 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
     console.log(keyColors);
     console.log(getHue);
 
-    return getHue;
+    for (let i = 0; i < keyColors.length; i++) {
+        if (keyColors[i] > mainColorHue && keyColors[i] !== keyColors[0]) {
+            const keyColor = keyColors[i-1];
+            const diff = mainColorHue - keyColor;
+            console.log('keyColor->' + keyColor);
+            console.log('diff->' + diff);
+            return　getHue;
+        } else if (keyColors[i] > mainColorHue && keyColors[i] === keyColors[0]) {
+            const keyColor = keyColors[keyColors.length - 1];
+            const diff = (360 - keyColor) + mainColorHue;
+            console.log('keyColor->' + keyColor);
+            console.log('diff->' + diff);
+            return　getHue;
+        }
+    }
 }
 
 export { accentColorHue };
