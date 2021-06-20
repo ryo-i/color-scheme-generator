@@ -149,7 +149,9 @@ function Inner() {
     const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
     setMainHue(hsb.h);
     setMainSaturation(hsb.s);
+    setAccentSaturation(hsb.s);
     setMainBrightness(hsb.b);
+    setAccentBrightness(hsb.b);
   };
 
 
@@ -157,22 +159,33 @@ function Inner() {
     const getName:string = String(e.target.name);
     const getValue: number = Number(e.target.value);
 
-    let rgb: {r: number, g: number, b: number};
+    let mainRgb: {r: number, g: number, b: number};
+    let accentRgb: {r: number, g: number, b: number};
+
     if (getName === 'hue') {
       setMainHue(getValue);
-      rgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
+      mainRgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
+      accentRgb = hsbToRgb(accentHue, accentSaturation, accentBrightness);
     } else if (getName === 'saturation') {
       setMainSaturation(getValue);
-      rgb = hsbToRgb(mainHue, getValue, mainBrightness);
+      setAccentSaturation(getValue);
+      mainRgb = hsbToRgb(mainHue, getValue, mainBrightness);
+      accentRgb = hsbToRgb(accentHue, getValue, accentBrightness);
     } else if (getName === 'brightness') {
       setMainBrightness(getValue);
-      rgb = hsbToRgb(mainHue, mainSaturation, getValue);
+      setAccentBrightness(getValue);
+      mainRgb = hsbToRgb(mainHue, mainSaturation, getValue);
+      accentRgb = hsbToRgb(accentHue, getValue, getValue);
     }
-    console.log(rgb);
+    console.log(mainRgb);
+    const mainHex: string = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+    console.log(mainHex);
+    setMainColor(mainHex);
 
-    const hex: string = rgbToHex(rgb.r, rgb.g, rgb.b);
-    console.log(hex);
-    setMainColor(hex);
+    console.log(accentRgb);
+    const accentHex: string = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+    console.log(accentHex);
+    setAccentColor(accentHex);
   };
 
 

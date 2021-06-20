@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* アクセントカラーのH値フックを画面テキストに反映 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* メインカラーとアクセントカラーのSBを同期 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
