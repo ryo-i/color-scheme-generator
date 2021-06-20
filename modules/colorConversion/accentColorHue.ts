@@ -1,12 +1,11 @@
 function accentColorHue (keyColor: number[], mainColorHue: number) {
-
     const keyColors: number[] = keyColor;
     const KeyLength: number = keyColors.length;
     const keyHalfLength: number = KeyLength /2;
-    const getHue: number = keyColors[keyHalfLength];
-    console.log(keyHalfLength);
     console.log(keyColors);
-    console.log(getHue);
+    console.log('KeyLength->' + KeyLength);
+    console.log('keyHalfLength->' + keyHalfLength);
+
 
     let mainColorNum: number = 0;
     let mainColorKey: number = 0;
@@ -18,7 +17,7 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
         nextMeinColorKye = keyColor;
         nextMainColorDiff = nextMeinColorKye - mainColorKey;
         if (nextMainColorDiff < 0) {
-            nextMainColorDiff = nextMainColorDiff + 365;
+            nextMainColorDiff = nextMainColorDiff + 360;
         }
     };
 
@@ -40,6 +39,7 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
 
     console.log('mainColorNum->' + mainColorNum);
     console.log('mainColorKey->' + mainColorKey);
+    console.log('mainColorHue->' + mainColorHue);
     console.log('mainColorDiff->' + mainColorDiff);
     console.log('nextMeinColorKye->' + nextMeinColorKye);
     console.log('nextMainColorDiff->' + nextMainColorDiff);
@@ -64,14 +64,18 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
 
     let nextAccentColorDiff: number = nextAccentColorKye - accentColorKey;
     if (nextAccentColorDiff < 0) {
-        nextAccentColorDiff = nextAccentColorDiff + 365;
+        nextAccentColorDiff = nextAccentColorDiff + 360;
     }
     console.log('nextAccentColorDiff->' + nextAccentColorDiff);
 
+    const accentColorUnit: number = nextAccentColorDiff / nextMainColorDiff;
+    let accentColorDiff: number = Math.round(mainColorDiff * accentColorUnit);
+    const accentColorHue: number = accentColorKey + accentColorDiff;
+    console.log('accentColorUnit->' + accentColorUnit);
+    console.log('accentColorDiff->' + accentColorDiff);
+    console.log('accentColorHue->' + accentColorHue);
 
-    let accentColorDiff: number = 0;
-
-    return　getHue;
+    return　accentColorHue;
 }
 
 export { accentColorHue };
