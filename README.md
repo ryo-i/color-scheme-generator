@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーのH値からアクセントカラーの色相環の基準色の範囲を割り出す [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* メインカラーのH値の変数設定をfor文の外に出す [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
