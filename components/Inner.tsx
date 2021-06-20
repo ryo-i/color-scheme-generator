@@ -103,7 +103,13 @@ function Inner() {
   const [mainHue, setMainHue] = useState(innerJson.mainColor.hue);
   const [mainSaturation, setMainSaturation] = useState(innerJson.mainColor.saturation);
   const [mainBrightness, setMainBrightness] = useState(innerJson.mainColor.brightness);
+  const [accentHue, setAccentHue] = useState(innerJson.accentColor.hue);
+  const [accentSaturation, setAccentSaturation] = useState(innerJson.accentColor.saturation);
+  const [accentBrightness, setAccentBrightness] = useState(innerJson.accentColor.brightness);
   const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
+  const [baseHue, setBaseHue] = useState(innerJson.baseColor.hue);
+  const [baseSaturation, setBaseSaturation] = useState(innerJson.baseColor.saturation);
+  const [baseBrightness, setBaseBrightness] = useState(innerJson.baseColor.brightness);
   const [contrast, setContrast] = useState(innerJson.baseColor.contrast);
 
 
@@ -234,7 +240,7 @@ function Inner() {
           <input type="range" name="brightness" value={mainBrightness} min="0" max="100" onChange={changeMainColor} />
         </section>
         <section className="accentColor">
-          <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>
+          <h2>アクセントカラー<span>（H:{accentHue}, S:{accentSaturation}, B:{accentBrightness}）</span></h2>
           <p>色相環：{hueCircle}</p>
           <label><input type="radio" name="hueCircle" value="HSB色相環" data-hue-circle="hsb" onChange={changeAccentColor} />HSB</label>
           <label><input type="radio" name="hueCircle" value="マンセル色相環" data-hue-circle="munsell" onChange={changeAccentColor} />マンセル</label>
@@ -243,7 +249,7 @@ function Inner() {
           <label><input type="radio" name="hueCircle" value="イッテン色相環" data-hue-circle="itten" onChange={changeAccentColor} defaultChecked />イッテン</label>
         </section>
         <section className="baseColor">
-          <h2>ベースカラー<span>（H:123, S:123, B:123）</span></h2>
+          <h2>ベースカラー<span>（H:{baseHue}, S:{baseSaturation}, B:{baseBrightness}）</span></h2>
           <p>コントラスト：{contrast}%</p>
           <input type="range" name="contrast" value={contrast} min="0" max="200" step="5" onChange={changeBaseColor} />
         </section>
