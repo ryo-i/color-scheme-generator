@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーの次の基準点の値を算出 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* アクセントカラーの基準点の値と差分を算出 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
