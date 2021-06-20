@@ -100,9 +100,9 @@ function Inner() {
   const [mainColor, setMainColor] = useState(innerJson.colorPicker.mainColor);
   const [accentColor, setAccentColor] = useState(innerJson.colorPicker.accentColor);
   const [baseColor, setBaseColor] = useState(innerJson.colorPicker.baseColor);
-  const [hue, setHue] = useState(innerJson.mainColor.hue);
-  const [saturation, setSaturation] = useState(innerJson.mainColor.saturation);
-  const [brightness, setBrightness] = useState(innerJson.mainColor.brightness);
+  const [mainHue, setMainHue] = useState(innerJson.mainColor.hue);
+  const [mainSaturation, setMainSaturation] = useState(innerJson.mainColor.saturation);
+  const [mainBrightness, setMainBrightness] = useState(innerJson.mainColor.brightness);
   const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
   const [contrast, setContrast] = useState(innerJson.baseColor.contrast);
 
@@ -115,8 +115,8 @@ function Inner() {
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
 
-    const getHue = accentColorHue(keyColor, hue);
-    const getRgb = hsbToRgb(getHue, saturation, brightness);
+    const getHue = accentColorHue(keyColor, mainHue);
+    const getRgb = hsbToRgb(getHue, mainSaturation, mainBrightness);
     const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
     console.log('accentColorHue->' + getHue);
     console.log(getRgb);
@@ -139,9 +139,9 @@ function Inner() {
 
     const rgb = hexToRgb(getValue);
     const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
-    setHue(hsb.h);
-    setSaturation(hsb.s);
-    setBrightness(hsb.b);
+    setMainHue(hsb.h);
+    setMainSaturation(hsb.s);
+    setMainBrightness(hsb.b);
   };
 
 
@@ -151,14 +151,14 @@ function Inner() {
 
     let rgb: {r: number, g: number, b: number};
     if (getName === 'hue') {
-      setHue(getValue);
-      rgb = hsbToRgb(getValue, saturation, brightness);
+      setMainHue(getValue);
+      rgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
     } else if (getName === 'saturation') {
-      setSaturation(getValue);
-      rgb = hsbToRgb(hue, getValue, brightness);
+      setMainSaturation(getValue);
+      rgb = hsbToRgb(mainHue, getValue, mainBrightness);
     } else if (getName === 'brightness') {
-      setBrightness(getValue);
-      rgb = hsbToRgb(hue, saturation, getValue);
+      setMainBrightness(getValue);
+      rgb = hsbToRgb(mainHue, mainSaturation, getValue);
     }
     console.log(rgb);
 
@@ -172,13 +172,13 @@ function Inner() {
     const getValue: string = String(e.target.value);
     const hueCircle: string = e.target.dataset.hueCircle;
     const keyColor: number[] = innerJson.hueCircle[hueCircle];
-    const mainColorHue: number = hue;
+    const mainColorHue: number = mainHue;
     console.log('hueCircleType->' + hueCircle);
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
 
     const getHue = accentColorHue(keyColor, mainColorHue);
-    const getRgb = hsbToRgb(getHue, saturation, brightness);
+    const getRgb = hsbToRgb(getHue, mainSaturation, mainBrightness);
     const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
     console.log('accentColorHue->' + getHue);
     console.log(getRgb);
@@ -225,13 +225,13 @@ function Inner() {
       </Result>
       <Generator>
         <section className="mainColor">
-          <h2>メインカラー<span>（H:{hue}, S:{saturation}, B:{brightness}）</span></h2>
-          <p>色相(H)：{hue}</p>
-          <input type="range" name="hue" value={hue} min="0" max="360" onChange={changeMainColor} />
-          <p>彩度(S)：{saturation}</p>
-          <input type="range" name="saturation" value={saturation} min="0" max="100" onChange={changeMainColor} />
-          <p>明度(B)：{brightness} </p>
-          <input type="range" name="brightness" value={brightness} min="0" max="100" onChange={changeMainColor} />
+          <h2>メインカラー<span>（H:{mainHue}, S:{mainSaturation}, B:{mainBrightness}）</span></h2>
+          <p>色相(H)：{mainHue}</p>
+          <input type="range" name="hue" value={mainHue} min="0" max="360" onChange={changeMainColor} />
+          <p>彩度(S)：{mainSaturation}</p>
+          <input type="range" name="saturation" value={mainSaturation} min="0" max="100" onChange={changeMainColor} />
+          <p>明度(B)：{mainBrightness} </p>
+          <input type="range" name="brightness" value={mainBrightness} min="0" max="100" onChange={changeMainColor} />
         </section>
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:123, S:123, B:123）</span></h2>

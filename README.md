@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーのH値が配列の最後の値より大きい場合もアクセントカラーを算出 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* メインカラーのHSBのフック名を変更 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
