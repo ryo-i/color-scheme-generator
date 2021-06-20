@@ -122,11 +122,13 @@ function Inner() {
     console.log('keyColorLenght->' + keyColor.length);
 
     const getHue = accentColorHue(keyColor, mainHue);
-    const getRgb = hsbToRgb(getHue, mainSaturation, mainBrightness);
+    const getRgb = hsbToRgb(getHue, accentSaturation, accentBrightness);
     const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
     console.log('accentColorHue->' + getHue);
     console.log(getRgb);
     console.log(getHex);
+
+    setAccentHue(getHue);
     setAccentColor(getHex);
   }, []);
 
@@ -184,13 +186,14 @@ function Inner() {
     console.log('keyColorLenght->' + keyColor.length);
 
     const getHue = accentColorHue(keyColor, mainColorHue);
-    const getRgb = hsbToRgb(getHue, mainSaturation, mainBrightness);
+    const getRgb = hsbToRgb(getHue, accentSaturation, accentBrightness);
     const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
     console.log('accentColorHue->' + getHue);
     console.log(getRgb);
     console.log(getHex);
-    setAccentColor(getHex);
 
+    setAccentHue(getHue);
+    setAccentColor(getHex);
     setHueCircle(getValue);
   };
 
