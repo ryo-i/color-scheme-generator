@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーとアクセントカラーのSBを同期 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* メインカラーのHからアクセントカラーのHを算出 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 

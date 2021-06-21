@@ -34,8 +34,8 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
             mainColorDiff = (360 - mainColorKey) + mainColorHue;
             setNextMainColor(keyColors[i], mainColorKey);
             break;
-        } else {
-            mainColorNum = keyColors.length - 1;
+        } else if (keyColors[i] < mainColorHue && keyColors[i] === keyColors[keyColors.length - 1]) {
+            mainColorNum = i - 1;
             mainColorKey = keyColors[mainColorNum];
             mainColorDiff = mainColorHue - mainColorKey;
             setNextMainColor(keyColors[i], mainColorKey);

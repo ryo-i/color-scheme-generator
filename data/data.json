@@ -9,7 +9,7 @@
     "inner": {
         "colorPicker": {
             "mainColor": "#ff0000",
-            "accentColor": "#00ff00",
+            "accentColor": "#00eaff",
             "baseColor": "#0000ff"
         },
         "mainColor": {
@@ -18,7 +18,7 @@
             "brightness": 100
         },
         "accentColor": {
-            "hue": 180,
+            "hue": 185,
             "saturation": 100,
             "brightness": 100,
             "hueCircle": "イッテン色相環",
