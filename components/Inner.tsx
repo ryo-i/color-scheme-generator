@@ -17,6 +17,7 @@ const Result = styled.div`
     display: flex;
     width: 100%;
     margin 0 0 10px;
+    border: 1px #ddd solid;
     div {
       height: 80px;
     }
@@ -25,6 +26,8 @@ const Result = styled.div`
     }
     .accentColor {
       width: 5%;
+      border-left: 1px #ddd solid;
+      border-right: 1px #ddd solid;
     }
     .baseColor {
       width: 70%;
@@ -122,22 +125,35 @@ function Inner() {
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getName:string = String(e.target.name);
     const getValue: string = String(e.target.value);
+    const rgb = hexToRgb(getValue);
+    const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
 
     if (getName === 'mainColor') {
+      setMainHue(hsb.h);
+      setMainSaturation(hsb.s);
+      setMainBrightness(hsb.b);
       setMainColor(getValue);
+
+      const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
+      let getAccentHue = accentColorHue(keyColor, hsb.h);
+      if (getAccentHue > 360) {
+        getAccentHue = getAccentHue - 360;
+      }
+      setAccentHue(getAccentHue);
+      setAccentSaturation(hsb.s);
+      setAccentBrightness(hsb.b);
+      const getRgb = hsbToRgb(getAccentHue, hsb.s, hsb.b);
+      const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
+      setAccentColor(getHex);
     } else if (getName === 'accentColor') {
       setAccentColor(getValue);
+      setMainSaturation(hsb.s);
+      setAccentSaturation(hsb.s);
+      setMainBrightness(hsb.b);
+      setAccentBrightness(hsb.b);
     } else if (getName === 'baseColor') {
       setBaseColor(getValue);
     }
-
-    const rgb = hexToRgb(getValue);
-    const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
-    setMainHue(hsb.h);
-    setMainSaturation(hsb.s);
-    setAccentSaturation(hsb.s);
-    setMainBrightness(hsb.b);
-    setAccentBrightness(hsb.b);
   };
 
 
