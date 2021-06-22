@@ -158,6 +158,7 @@ function Inner() {
       }
       console.log('getkeyColor' + keyColor);
       console.log('getAccentHue' + getAccentHue);
+      setAccentHue(getAccentHue);
 
       mainRgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
       accentRgb = hsbToRgb(getAccentHue, accentSaturation, accentBrightness);
