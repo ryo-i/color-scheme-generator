@@ -122,6 +122,16 @@ function Inner() {
   }, []);
 
 
+  const checkAccentHue = (h) => {
+    const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
+    let getHue = accentColorHue(keyColor, h);
+    if (getHue > 360) {
+      getHue = getHue - 360;
+    }
+    return getHue;
+  };
+
+
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getName:string = String(e.target.name);
     const getValue: string = String(e.target.value);
@@ -134,34 +144,26 @@ function Inner() {
       setMainBrightness(hsb.b);
       setMainColor(getValue);
 
-      const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
-      let getHue = accentColorHue(keyColor, hsb.h);
-      if (getHue > 360) {
-        getHue = getHue - 360;
-      }
-      setAccentHue(getHue);
+      const accentHue = checkAccentHue(hsb.h);
+      setAccentHue(accentHue);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
-      const getRgb = hsbToRgb(getHue, hsb.s, hsb.b);
-      const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
-      setAccentColor(getHex);
+      const accentRgb = hsbToRgb(accentHue, hsb.s, hsb.b);
+      const accentHex = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+      setAccentColor(accentHex);
     } else if (getName === 'accentColor') {
       setAccentHue(hsb.h);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
       setAccentColor(getValue);
 
-      const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
-      let getHue = accentColorHue(keyColor, hsb.h);
-      if (getHue > 360) {
-        getHue = getHue - 360;
-      }
-      setMainHue(getHue);
+      const mainHue = checkAccentHue(hsb.h);
+      setMainHue(mainHue);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
-      const getRgb = hsbToRgb(getHue, hsb.s, hsb.b);
-      const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
-      setMainColor(getHex);
+      const mainRgb = hsbToRgb(mainHue, hsb.s, hsb.b);
+      const mainHex = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+      setMainColor(mainHex);
     } else if (getName === 'baseColor') {
       setBaseColor(getValue);
     }
@@ -177,18 +179,10 @@ function Inner() {
 
     if (getName === 'hue') {
       setMainHue(getValue);
-
-      const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
-      let getAccentHue = accentColorHue(keyColor, getValue);
-      if (getAccentHue > 360) {
-        getAccentHue = getAccentHue - 360;
-      }
-      console.log('getkeyColor' + keyColor);
-      console.log('getAccentHue' + getAccentHue);
-      setAccentHue(getAccentHue);
-
+      const accentHue = checkAccentHue(getValue);
+      setAccentHue(accentHue);
       mainRgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
-      accentRgb = hsbToRgb(getAccentHue, accentSaturation, accentBrightness);
+      accentRgb = hsbToRgb(accentHue, accentSaturation, accentBrightness);
     } else if (getName === 'saturation') {
       setMainSaturation(getValue);
       setAccentSaturation(getValue);

@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* カラーピッカー、アクセントカラー→メインカラーの連携 [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* リファクタリング [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
 
 ## ブログ
 
