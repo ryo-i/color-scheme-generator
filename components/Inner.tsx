@@ -135,22 +135,33 @@ function Inner() {
       setMainColor(getValue);
 
       const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
-      let getAccentHue = accentColorHue(keyColor, hsb.h);
-      if (getAccentHue > 360) {
-        getAccentHue = getAccentHue - 360;
+      let getHue = accentColorHue(keyColor, hsb.h);
+      if (getHue > 360) {
+        getHue = getHue - 360;
       }
-      setAccentHue(getAccentHue);
+      setAccentHue(getHue);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
-      const getRgb = hsbToRgb(getAccentHue, hsb.s, hsb.b);
+      const getRgb = hsbToRgb(getHue, hsb.s, hsb.b);
       const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
       setAccentColor(getHex);
     } else if (getName === 'accentColor') {
-      setAccentColor(getValue);
-      setMainSaturation(hsb.s);
+      setAccentHue(hsb.h);
       setAccentSaturation(hsb.s);
-      setMainBrightness(hsb.b);
       setAccentBrightness(hsb.b);
+      setAccentColor(getValue);
+
+      const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
+      let getHue = accentColorHue(keyColor, hsb.h);
+      if (getHue > 360) {
+        getHue = getHue - 360;
+      }
+      setMainHue(getHue);
+      setMainSaturation(hsb.s);
+      setMainBrightness(hsb.b);
+      const getRgb = hsbToRgb(getHue, hsb.s, hsb.b);
+      const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
+      setMainColor(getHex);
     } else if (getName === 'baseColor') {
       setBaseColor(getValue);
     }
