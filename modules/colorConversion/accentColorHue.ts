@@ -35,10 +35,10 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
             setNextMainColor(keyColors[i], mainColorKey);
             break;
         } else if (keyColors[i] <= mainColorHue && keyColors[i] === keyColors[keyColors.length - 1]) {
-            mainColorNum = i - 1;
+            mainColorNum = i;
             mainColorKey = keyColors[mainColorNum];
             mainColorDiff = mainColorHue - mainColorKey;
-            setNextMainColor(keyColors[i], mainColorKey);
+            setNextMainColor(keyColors[0], mainColorKey);
             break;
         }
     }
