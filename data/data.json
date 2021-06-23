@@ -10,7 +10,7 @@
         "colorPicker": {
             "mainColor": "#ff0000",
             "accentColor": "#00eaff",
-            "baseColor": "#0000ff"
+            "baseColor": "#ffcccc"
         },
         "mainColor": {
             "hue": 0,

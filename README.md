@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* リファクタリング [#10](https://github.com/ryo-i/color-scheme-generator/issues/10)
+* カラーピッカーのアクセントカラーの初期値を変更 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
 
 ## ブログ
 
