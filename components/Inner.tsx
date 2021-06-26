@@ -281,6 +281,7 @@ function Inner() {
           <label><input type="radio" name="hueCircle" value="オストワルト色相環" data-hue-circle="ostwald" onChange={changeAccentColor} />オストワルト</label>
           <label><input type="radio" name="hueCircle" value="PCCS色相環" data-hue-circle="pccs" onChange={changeAccentColor} />PCCS</label>
           <label><input type="radio" name="hueCircle" value="イッテン色相環" data-hue-circle="itten" onChange={changeAccentColor} defaultChecked />イッテン</label>
+          <label><input type="radio" name="hueCircle" value="NCS色相環" data-hue-circle="ncs" onChange={changeAccentColor} />NCS</label>
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:{baseHue}, S:{baseSaturation}, B:{baseBrightness}）</span></h2>
