@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* イッテン色相環の数値を改訂 [#13](https://github.com/ryo-i/color-scheme-generator/issues/13)
+* NCS色相環の数値を計測 [#14](https://github.com/ryo-i/color-scheme-generator/issues/14)
 * カラーピッカーのアクセントカラーの初期値を変更 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
 
 ## ブログ
