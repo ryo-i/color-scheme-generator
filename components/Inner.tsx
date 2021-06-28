@@ -144,6 +144,7 @@ function Inner() {
       setMainBrightness(hsb.b);
       setMainColor(getValue);
 
+      // Accent Color
       const accentHue = checkAccentHue(hsb.h);
       setAccentHue(accentHue);
       setAccentSaturation(hsb.s);
@@ -151,12 +152,21 @@ function Inner() {
       const accentRgb = hsbToRgb(accentHue, hsb.s, hsb.b);
       const accentHex = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
       setAccentColor(accentHex);
+
+      // Base Color
+      setBaseHue(hsb.h);
+      setBaseSaturation(baseSaturation);
+      setBaseBrightness(baseBrightness);
+      const baseRgb = hsbToRgb(hsb.h, baseSaturation, baseBrightness);
+      const baseHex = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
+      setBaseColor(baseHex);
     } else if (getName === 'accentColor') {
       setAccentHue(hsb.h);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
       setAccentColor(getValue);
 
+      // Main Color
       const mainHue = checkAccentHue(hsb.h);
       setMainHue(mainHue);
       setMainSaturation(hsb.s);
@@ -164,8 +174,36 @@ function Inner() {
       const mainRgb = hsbToRgb(mainHue, hsb.s, hsb.b);
       const mainHex = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
       setMainColor(mainHex);
+
+      // Base Color
+      setBaseHue(mainHue);
+      setBaseSaturation(baseSaturation);
+      setBaseBrightness(baseBrightness);
+      const baseRgb = hsbToRgb(mainHue, baseSaturation, baseBrightness);
+      const baseHex = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
+      setBaseColor(baseHex);
     } else if (getName === 'baseColor') {
+      setBaseHue(hsb.h);
+      setBaseSaturation(hsb.s);
+      setBaseBrightness(hsb.b);
       setBaseColor(getValue);
+
+      // Main Color
+      setMainHue(hsb.h);
+      setMainSaturation(mainSaturation);
+      setMainBrightness(mainBrightness);
+      const mainRgb = hsbToRgb(hsb.h, mainSaturation, mainBrightness);
+      const mainHex = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+      setMainColor(mainHex);
+
+      // Accent Color
+      const accentHue = checkAccentHue(hsb.h);
+      setAccentHue(accentHue);
+      setAccentSaturation(accentSaturation);
+      setAccentBrightness(accentBrightness);
+      const accentRgb = hsbToRgb(accentHue, accentSaturation, accentBrightness);
+      const accentHex = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+      setAccentColor(accentHex);
     }
   };
 
