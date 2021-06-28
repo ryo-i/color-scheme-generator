@@ -1,4 +1,4 @@
-function accentColorHue (keyColor: number[], mainColorHue: number) {
+const accentColorHue = (keyColor: number[], mainColorHue: number) => {
     const keyColors: number[] = keyColor;
     const KeyLength: number = keyColors.length;
     const keyHalfLength: number = KeyLength /2;
@@ -75,8 +75,11 @@ function accentColorHue (keyColor: number[], mainColorHue: number) {
     console.log('nextAccentColorDiff->' + nextAccentColorDiff);
 
     const accentColorUnit: number = nextAccentColorDiff / nextMainColorDiff;
-    let accentColorDiff: number = Math.round(mainColorDiff * accentColorUnit);
-    const accentColorHue: number = accentColorKey + accentColorDiff;
+    const accentColorDiff: number = Math.round(mainColorDiff * accentColorUnit);
+    let accentColorHue: number = accentColorKey + accentColorDiff;
+    if (accentColorHue > 360) {
+        accentColorHue = accentColorHue - 360;
+    }
     console.log('accentColorUnit->' + accentColorUnit);
     console.log('accentColorDiff->' + accentColorDiff);
     console.log('accentColorHue->' + accentColorHue);
