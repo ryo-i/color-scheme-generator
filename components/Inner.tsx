@@ -7,6 +7,8 @@ import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
 import { rgbToHex } from '../modules/colorConversion/rgbToHex';
 import { hsbToHex } from '../modules/colorConversion/hsbToHex';
 import { accentColorHue } from '../modules/colorConversion/accentColorHue';
+import { baseColorSaturation } from '../modules/colorConversion/baseColorSaturation';
+import { baseColorBrightness } from '../modules/colorConversion/baseColorBrightness';
 
 const innerJson = Data.inner;
 
@@ -127,6 +129,10 @@ function Inner() {
 
   useEffect(() => {
     // ページ読み込み時の処理
+    const baseBrightness = baseColorBrightness();
+    const baseSaturation = baseColorSaturation();
+    console.log('baseBrightness->' + baseBrightness);
+    console.log('baseSaturation->' + baseSaturation);
   }, []);
 
 

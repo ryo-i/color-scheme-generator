@@ -1,4 +1,4 @@
-function hsbToRgb (h: number, s: number, b: number) {
+const hsbToRgb = (h: number, s: number, b: number) => {
     let red: number = 0;
     let green: number = 0;
     let blue: number = 0;

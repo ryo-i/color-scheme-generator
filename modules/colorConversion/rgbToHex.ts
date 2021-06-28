@@ -1,4 +1,4 @@
-function rgbToHex (r: number, g: number, b: number) {
+const rgbToHex = (r: number, g: number, b: number) => {
     const rgbHex: {r: string, g: string, b: string} = {
         r: String(('00' + r.toString(16)).slice(-2)),
         g: String(('00' + g.toString(16)).slice(-2)),

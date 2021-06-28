@@ -4,9 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* hsbToHex()モジュールを作る [#17](https://github.com/ryo-i/color-scheme-generator/issues/17)
-* ベースカラーのHの変更を画面テキストに反映 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
-* Hが360を超えた場合の処理を追加 [#16](https://github.com/ryo-i/color-scheme-generator/issues/16)
+* baseColorSaturation(), baseColorBrightness()モジュール作成 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
 * アクセントカラーの再計測と詳細データ追加 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 
 ## ブログ

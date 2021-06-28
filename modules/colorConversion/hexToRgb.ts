@@ -1,4 +1,4 @@
-function hexToRgb (hex: string) {
+const hexToRgb = (hex: string) => {
     const hexColors: {r: string, b: string, g: string} = {
         r: hex.substring(1, 3),
         g: hex.substring(3, 5),
