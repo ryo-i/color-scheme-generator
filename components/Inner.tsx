@@ -5,6 +5,7 @@ import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
 import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
 import { rgbToHex } from '../modules/colorConversion/rgbToHex';
+import { hsbToHex } from '../modules/colorConversion/hsbToHex';
 import { accentColorHue } from '../modules/colorConversion/accentColorHue';
 
 const innerJson = Data.inner;
@@ -100,17 +101,24 @@ const Generator = styled.div`
 
 // Component
 function Inner() {
+  // Color Picker Hooks
   const [mainColor, setMainColor] = useState(innerJson.colorPicker.mainColor);
   const [accentColor, setAccentColor] = useState(innerJson.colorPicker.accentColor);
   const [baseColor, setBaseColor] = useState(innerJson.colorPicker.baseColor);
+
+  // Main Color Hooks
   const [mainHue, setMainHue] = useState(innerJson.mainColor.hue);
   const [mainSaturation, setMainSaturation] = useState(innerJson.mainColor.saturation);
   const [mainBrightness, setMainBrightness] = useState(innerJson.mainColor.brightness);
+
+  // Accent Color Hooks
   const [accentHue, setAccentHue] = useState(innerJson.accentColor.hue);
   const [accentSaturation, setAccentSaturation] = useState(innerJson.accentColor.saturation);
   const [accentBrightness, setAccentBrightness] = useState(innerJson.accentColor.brightness);
   const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
   const [hueCircleKey, setHueCircleKey] = useState(innerJson.accentColor.hueCircleKey);
+
+  // base Color Hooks
   const [baseHue, setBaseHue] = useState(innerJson.baseColor.hue);
   const [baseSaturation, setBaseSaturation] = useState(innerJson.baseColor.saturation);
   const [baseBrightness, setBaseBrightness] = useState(innerJson.baseColor.brightness);
@@ -149,16 +157,14 @@ function Inner() {
       setAccentHue(accentHue);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
-      const accentRgb = hsbToRgb(accentHue, hsb.s, hsb.b);
-      const accentHex = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+      const accentHex = hsbToHex(accentHue, hsb.s, hsb.b);
       setAccentColor(accentHex);
 
       // Base Color
       setBaseHue(hsb.h);
       setBaseSaturation(baseSaturation);
       setBaseBrightness(baseBrightness);
-      const baseRgb = hsbToRgb(hsb.h, baseSaturation, baseBrightness);
-      const baseHex = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
+      const baseHex = hsbToHex(hsb.h, baseSaturation, baseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'accentColor') {
       setAccentHue(hsb.h);
@@ -171,16 +177,14 @@ function Inner() {
       setMainHue(mainHue);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
-      const mainRgb = hsbToRgb(mainHue, hsb.s, hsb.b);
-      const mainHex = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+      const mainHex = hsbToHex(mainHue, hsb.s, hsb.b);
       setMainColor(mainHex);
 
       // Base Color
       setBaseHue(mainHue);
       setBaseSaturation(baseSaturation);
       setBaseBrightness(baseBrightness);
-      const baseRgb = hsbToRgb(mainHue, baseSaturation, baseBrightness);
-      const baseHex = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
+      const baseHex = hsbToHex(mainHue, baseSaturation, baseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'baseColor') {
       setBaseHue(hsb.h);
@@ -192,8 +196,7 @@ function Inner() {
       setMainHue(hsb.h);
       setMainSaturation(mainSaturation);
       setMainBrightness(mainBrightness);
-      const mainRgb = hsbToRgb(hsb.h, mainSaturation, mainBrightness);
-      const mainHex = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+      const mainHex = hsbToHex(hsb.h, mainSaturation, mainBrightness);
       setMainColor(mainHex);
 
       // Accent Color
@@ -201,8 +204,7 @@ function Inner() {
       setAccentHue(accentHue);
       setAccentSaturation(accentSaturation);
       setAccentBrightness(accentBrightness);
-      const accentRgb = hsbToRgb(accentHue, accentSaturation, accentBrightness);
-      const accentHex = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+      const accentHex = hsbToHex(accentHue, accentSaturation, accentBrightness);
       setAccentColor(accentHex);
     }
   };
@@ -266,15 +268,10 @@ function Inner() {
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
 
-    const getHue = accentColorHue(keyColor, mainColorHue);
-    const getRgb = hsbToRgb(getHue, accentSaturation, accentBrightness);
-    const getHex = rgbToHex(getRgb.r, getRgb.g, getRgb.b);
-    console.log('accentColorHue->' + getHue);
-    console.log(getRgb);
-    console.log(getHex);
-
-    setAccentHue(getHue);
-    setAccentColor(getHex);
+    const accentHue = accentColorHue(keyColor, mainColorHue);
+    const accentHex = hsbToHex(accentHue, accentSaturation, accentBrightness);
+    setAccentHue(accentHue);
+    setAccentColor(accentHex);
     setHueCircle(getValue);
     setHueCircleKey(hueCircleKey);
   };
