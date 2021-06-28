@@ -220,6 +220,7 @@ function Inner() {
       setMainHue(getValue);
       const accentHue = checkAccentHue(getValue);
       setAccentHue(accentHue);
+      setBaseHue(getValue);
       mainRgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
       accentRgb = hsbToRgb(accentHue, accentSaturation, accentBrightness);
       baseRgb = hsbToRgb(getValue, baseSaturation, baseBrightness);

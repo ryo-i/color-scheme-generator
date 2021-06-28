@@ -4,7 +4,8 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラーとベースカラーのH値を連携 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
+* アクセントカラーのHの変更を画面テキストに反映 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
+* アクセントカラーのHが360を超える→調査中 [#16](https://github.com/ryo-i/color-scheme-generator/issues/16)
 * アクセントカラーの再計測と詳細データ追加 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 
 ## ブログ
