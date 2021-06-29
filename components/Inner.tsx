@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
-import Data from '../data/data.json';
+import { inner } from '../data/data.json';
 import { hexToRgb } from '../modules/colorConversion/hexToRgb';
 import { rgbToHsb } from '../modules/colorConversion/rgbToHsb';
 import { hsbToRgb } from '../modules/colorConversion/hsbToRgb';
@@ -9,8 +9,6 @@ import { hsbToHex } from '../modules/colorConversion/hsbToHex';
 import { accentColorHue } from '../modules/colorConversion/accentColorHue';
 import { baseColorSaturation } from '../modules/colorConversion/baseColorSaturation';
 import { baseColorBrightness } from '../modules/colorConversion/baseColorBrightness';
-
-const innerJson = Data.inner;
 
 
 // Style
@@ -104,27 +102,27 @@ const Generator = styled.div`
 // Component
 function Inner() {
   // Color Picker Hooks
-  const [mainColor, setMainColor] = useState(innerJson.colorPicker.mainColor);
-  const [accentColor, setAccentColor] = useState(innerJson.colorPicker.accentColor);
-  const [baseColor, setBaseColor] = useState(innerJson.colorPicker.baseColor);
+  const [mainColor, setMainColor] = useState(inner.colorPicker.mainColor);
+  const [accentColor, setAccentColor] = useState(inner.colorPicker.accentColor);
+  const [baseColor, setBaseColor] = useState(inner.colorPicker.baseColor);
 
   // Main Color Hooks
-  const [mainHue, setMainHue] = useState(innerJson.mainColor.hue);
-  const [mainSaturation, setMainSaturation] = useState(innerJson.mainColor.saturation);
-  const [mainBrightness, setMainBrightness] = useState(innerJson.mainColor.brightness);
+  const [mainHue, setMainHue] = useState(inner.mainColor.hue);
+  const [mainSaturation, setMainSaturation] = useState(inner.mainColor.saturation);
+  const [mainBrightness, setMainBrightness] = useState(inner.mainColor.brightness);
 
   // Accent Color Hooks
-  const [accentHue, setAccentHue] = useState(innerJson.accentColor.hue);
-  const [accentSaturation, setAccentSaturation] = useState(innerJson.accentColor.saturation);
-  const [accentBrightness, setAccentBrightness] = useState(innerJson.accentColor.brightness);
-  const [hueCircle, setHueCircle] = useState(innerJson.accentColor.hueCircle);
-  const [hueCircleKey, setHueCircleKey] = useState(innerJson.accentColor.hueCircleKey);
+  const [accentHue, setAccentHue] = useState(inner.accentColor.hue);
+  const [accentSaturation, setAccentSaturation] = useState(inner.accentColor.saturation);
+  const [accentBrightness, setAccentBrightness] = useState(inner.accentColor.brightness);
+  const [hueCircle, setHueCircle] = useState(inner.accentColor.hueCircle);
+  const [hueCircleKey, setHueCircleKey] = useState(inner.accentColor.hueCircleKey);
 
   // base Color Hooks
-  const [baseHue, setBaseHue] = useState(innerJson.baseColor.hue);
-  const [baseSaturation, setBaseSaturation] = useState(innerJson.baseColor.saturation);
-  const [baseBrightness, setBaseBrightness] = useState(innerJson.baseColor.brightness);
-  const [contrast, setContrast] = useState(innerJson.baseColor.contrast);
+  const [baseHue, setBaseHue] = useState(inner.baseColor.hue);
+  const [baseSaturation, setBaseSaturation] = useState(inner.baseColor.saturation);
+  const [baseBrightness, setBaseBrightness] = useState(inner.baseColor.brightness);
+  const [contrast, setContrast] = useState(inner.baseColor.contrast);
 
 
   useEffect(() => {
@@ -134,16 +132,6 @@ function Inner() {
     console.log('baseBrightness->' + baseBrightness);
     console.log('baseSaturation->' + baseSaturation);
   }, []);
-
-
-  const checkAccentHue = (h) => {
-    const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
-    let getHue = accentColorHue(keyColor, h);
-    if (getHue > 360) {
-      getHue = getHue - 360;
-    }
-    return getHue;
-  };
 
 
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -159,7 +147,7 @@ function Inner() {
       setMainColor(getValue);
 
       // Accent Color
-      const accentHue = checkAccentHue(hsb.h);
+      const accentHue = accentColorHue(hsb.h, hueCircleKey);
       setAccentHue(accentHue);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
@@ -179,7 +167,7 @@ function Inner() {
       setAccentColor(getValue);
 
       // Main Color
-      const mainHue = checkAccentHue(hsb.h);
+      const mainHue = accentColorHue(hsb.h, hueCircleKey);
       setMainHue(mainHue);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
@@ -206,7 +194,7 @@ function Inner() {
       setMainColor(mainHex);
 
       // Accent Color
-      const accentHue = checkAccentHue(hsb.h);
+      const accentHue = accentColorHue(hsb.h, hueCircleKey);
       setAccentHue(accentHue);
       setAccentSaturation(accentSaturation);
       setAccentBrightness(accentBrightness);
@@ -226,7 +214,7 @@ function Inner() {
 
     if (getName === 'hue') {
       setMainHue(getValue);
-      const accentHue = checkAccentHue(getValue);
+      const accentHue = accentColorHue(getValue, hueCircleKey);
       setAccentHue(accentHue);
       setBaseHue(getValue);
       mainRgb = hsbToRgb(getValue, mainSaturation, mainBrightness);
@@ -268,13 +256,13 @@ function Inner() {
   const changeAccentColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: string = String(e.target.value);
     const hueCircleKey: string = e.target.dataset.hueCircle;
-    const keyColor: number[] = innerJson.hueCircle[hueCircleKey];
+    const keyColor: number[] = inner.hueCircle[hueCircleKey];
     const mainColorHue: number = mainHue;
     console.log('hueCircleKey->' + hueCircleKey);
     console.log('keyColor->' + keyColor);
     console.log('keyColorLenght->' + keyColor.length);
 
-    const accentHue = accentColorHue(keyColor, mainColorHue);
+    const accentHue = accentColorHue(mainColorHue, hueCircleKey);
     const accentHex = hsbToHex(accentHue, accentSaturation, accentBrightness);
     setAccentHue(accentHue);
     setAccentColor(accentHex);

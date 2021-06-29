@@ -1,11 +1,12 @@
-const accentColorHue = (keyColor: number[], mainColorHue: number) => {
-    const keyColors: number[] = keyColor;
-    const KeyLength: number = keyColors.length;
+import { inner } from '../../data/data.json';
+
+const accentColorHue = (mainColorHue: number, hueCircleKey: string) => {
+    const keyColor: number[] = inner.hueCircle[hueCircleKey];
+    const KeyLength: number = keyColor.length;
     const keyHalfLength: number = KeyLength /2;
-    console.log(keyColors);
+    console.log(keyColor);
     console.log('KeyLength->' + KeyLength);
     console.log('keyHalfLength->' + keyHalfLength);
-
 
     let mainColorNum: number = 0;
     let mainColorKey: number = 0;
@@ -21,24 +22,24 @@ const accentColorHue = (keyColor: number[], mainColorHue: number) => {
         }
     };
 
-    for (let i = 0; i < keyColors.length; i++) {
-        if (keyColors[i] > mainColorHue && keyColors[i] !== keyColors[0]) {
+    for (let i = 0; i < keyColor.length; i++) {
+        if (keyColor[i] > mainColorHue && keyColor[i] !== keyColor[0]) {
             mainColorNum = i - 1;
-            mainColorKey = keyColors[mainColorNum];
+            mainColorKey = keyColor[mainColorNum];
             mainColorDiff = mainColorHue - mainColorKey;
-            setNextMainColor(keyColors[i], mainColorKey);
+            setNextMainColor(keyColor[i], mainColorKey);
             break;
-        } else if (keyColors[i] > mainColorHue && keyColors[i] === keyColors[0]) {
-            mainColorNum = keyColors.length - 1;
-            mainColorKey = keyColors[mainColorNum];
+        } else if (keyColor[i] > mainColorHue && keyColor[i] === keyColor[0]) {
+            mainColorNum = keyColor.length - 1;
+            mainColorKey = keyColor[mainColorNum];
             mainColorDiff = (360 - mainColorKey) + mainColorHue;
-            setNextMainColor(keyColors[i], mainColorKey);
+            setNextMainColor(keyColor[i], mainColorKey);
             break;
-        } else if (keyColors[i] <= mainColorHue && keyColors[i] === keyColors[keyColors.length - 1]) {
+        } else if (keyColor[i] <= mainColorHue && keyColor[i] === keyColor[keyColor.length - 1]) {
             mainColorNum = i;
-            mainColorKey = keyColors[mainColorNum];
+            mainColorKey = keyColor[mainColorNum];
             mainColorDiff = mainColorHue - mainColorKey;
-            setNextMainColor(keyColors[0], mainColorKey);
+            setNextMainColor(keyColor[0], mainColorKey);
             break;
         }
     }
@@ -52,18 +53,18 @@ const accentColorHue = (keyColor: number[], mainColorHue: number) => {
 
 
     let accentColorNum: number = mainColorNum + keyHalfLength;
-    let accentColorKey: number = keyColors[accentColorNum];
+    let accentColorKey: number = keyColor[accentColorNum];
     if (!accentColorKey) {
         accentColorNum = accentColorNum - KeyLength;
-        accentColorKey = keyColors[accentColorNum];
+        accentColorKey = keyColor[accentColorNum];
     }
     console.log('accentColorNum->' + accentColorNum);
     console.log('accentColorKey->' + accentColorKey);
 
 
-    let nextAccentColorKye: number = keyColors[accentColorNum + 1];
+    let nextAccentColorKye: number = keyColor[accentColorNum + 1];
     if (!nextAccentColorKye) {
-        nextAccentColorKye = keyColors[0];
+        nextAccentColorKye = keyColor[0];
     }
     console.log('nextAccentColorKye->' + nextAccentColorKye);
 
