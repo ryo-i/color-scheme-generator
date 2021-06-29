@@ -270,9 +270,12 @@ function Inner() {
   const changeBaseColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: number = Number(e.target.value);
     setContrast(getValue);
-    const getBaseSaturation = baseColorSaturation(getValue, baseSaturation);
-    const getBaseBrightness = baseColorBrightness(getValue, baseBrightness);
+
+    const getBaseSaturation = baseColorSaturation(getValue, mainSaturation);
     console.log('getBaseSaturation->' + getBaseSaturation);
+    setBaseSaturation(getBaseSaturation);
+
+    const getBaseBrightness = baseColorBrightness(getValue, mainBrightness);
     console.log('getBaseBrightness->' + getBaseBrightness);
   };
 
