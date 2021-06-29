@@ -4,8 +4,8 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* checkAccentHue()で取得した値の変数名を明確化 [#19](https://github.com/ryo-i/color-scheme-generator/issues/19)
 * baseColorSaturation(), baseColorBrightness()に引数を設定 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
-* checkAccentHue()の内容をaccentColorHue()モジュールに含める [#19](https://github.com/ryo-i/color-scheme-generator/issues/19)
 * アクセントカラーの再計測と詳細データ追加 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 
 ## ブログ
