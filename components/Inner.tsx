@@ -127,10 +127,6 @@ function Inner() {
 
   useEffect(() => {
     // ページ読み込み時の処理
-    const baseBrightness = baseColorBrightness();
-    const baseSaturation = baseColorSaturation();
-    console.log('baseBrightness->' + baseBrightness);
-    console.log('baseSaturation->' + baseSaturation);
   }, []);
 
 
@@ -274,6 +270,10 @@ function Inner() {
   const changeBaseColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: number = Number(e.target.value);
     setContrast(getValue);
+    const getBaseSaturation = baseColorSaturation(getValue, baseSaturation);
+    const getBaseBrightness = baseColorBrightness(getValue, baseBrightness);
+    console.log('getBaseSaturation->' + getBaseSaturation);
+    console.log('getBaseBrightness->' + getBaseBrightness);
   };
 
 
