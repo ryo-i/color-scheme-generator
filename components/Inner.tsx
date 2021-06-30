@@ -277,6 +277,7 @@ function Inner() {
 
     const getBaseBrightness = baseColorBrightness(getValue, mainBrightness);
     console.log('getBaseBrightness->' + getBaseBrightness);
+    setBaseBrightness(getBaseBrightness);
   };
 
 

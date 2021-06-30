@@ -1,7 +1,5 @@
 const baseColorSaturation = (contrast: number, saturation: number) => {
     let baseColorSaturation: number = 0;
-    console.log('contrast->' + contrast);
-    console.log('saturation->' + saturation);
 
     if (contrast == 100) {
         baseColorSaturation = saturation;
