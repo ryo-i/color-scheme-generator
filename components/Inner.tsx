@@ -217,17 +217,21 @@ function Inner() {
       accentRgb = hsbToRgb(getAccentHue, accentSaturation, accentBrightness);
       baseRgb = hsbToRgb(getValue, baseSaturation, baseBrightness);
     } else if (getName === 'saturation') {
+      const getBaseSaturation = baseColorSaturation(contrast, getValue);
       setMainSaturation(getValue);
       setAccentSaturation(getValue);
+      setBaseSaturation(getBaseSaturation);
       mainRgb = hsbToRgb(mainHue, getValue, mainBrightness);
       accentRgb = hsbToRgb(accentHue, getValue, accentBrightness);
-      baseRgb = hsbToRgb(baseHue, baseSaturation, baseBrightness);
+      baseRgb = hsbToRgb(baseHue, getBaseSaturation, baseBrightness);
     } else if (getName === 'brightness') {
+      const getBaseBrightness = baseColorBrightness(contrast, getValue);
       setMainBrightness(getValue);
       setAccentBrightness(getValue);
+      setBaseBrightness(getBaseBrightness);
       mainRgb = hsbToRgb(mainHue, mainSaturation, getValue);
       accentRgb = hsbToRgb(accentHue, getValue, getValue);
-      baseRgb = hsbToRgb(baseHue, baseSaturation, baseBrightness);
+      baseRgb = hsbToRgb(baseHue, baseSaturation, getBaseBrightness);
     }
 
     // Main Color
@@ -269,15 +273,12 @@ function Inner() {
 
   const changeBaseColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getValue: number = Number(e.target.value);
-    setContrast(getValue);
-
     const getBaseSaturation = baseColorSaturation(getValue, mainSaturation);
-    setBaseSaturation(getBaseSaturation);
-
     const getBaseBrightness = baseColorBrightness(getValue, mainBrightness);
-    setBaseBrightness(getBaseBrightness);
-
     const baseHex = hsbToHex(baseHue, getBaseSaturation, getBaseBrightness);
+    setContrast(getValue);
+    setBaseSaturation(getBaseSaturation);
+    setBaseBrightness(getBaseBrightness);
     setBaseColor(baseHex);
   };
 
