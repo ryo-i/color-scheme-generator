@@ -272,12 +272,13 @@ function Inner() {
     setContrast(getValue);
 
     const getBaseSaturation = baseColorSaturation(getValue, mainSaturation);
-    console.log('getBaseSaturation->' + getBaseSaturation);
     setBaseSaturation(getBaseSaturation);
 
     const getBaseBrightness = baseColorBrightness(getValue, mainBrightness);
-    console.log('getBaseBrightness->' + getBaseBrightness);
     setBaseBrightness(getBaseBrightness);
+
+    const baseHex = hsbToHex(baseHue, getBaseSaturation, getBaseBrightness);
+    setBaseColor(baseHex);
   };
 
 
