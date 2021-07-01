@@ -324,12 +324,12 @@ function Inner() {
         <section className="accentColor">
           <h2>アクセントカラー<span>（H:{accentHue}, S:{accentSaturation}, B:{accentBrightness}）</span></h2>
           <p>色相環：{hueCircle}</p>
-          <label><input type="radio" name="hueCircle" value="HSB色相環" data-hue-circle="hsb" onChange={changeAccentColor} />HSB</label>
-          <label><input type="radio" name="hueCircle" value="マンセル色相環" data-hue-circle="munsell" onChange={changeAccentColor} />マンセル</label>
-          <label><input type="radio" name="hueCircle" value="オストワルト色相環" data-hue-circle="ostwald" onChange={changeAccentColor} />オストワルト</label>
-          <label><input type="radio" name="hueCircle" value="PCCS色相環" data-hue-circle="pccs" onChange={changeAccentColor} />PCCS</label>
-          <label><input type="radio" name="hueCircle" value="イッテン色相環" data-hue-circle="itten" onChange={changeAccentColor} defaultChecked />イッテン</label>
-          <label><input type="radio" name="hueCircle" value="NCS色相環" data-hue-circle="ncs" onChange={changeAccentColor} />NCS</label>
+          <label><input type="radio" name="hueCircle" value="HSB表色系" data-hue-circle="hsb" onChange={changeAccentColor} />HSB</label>
+          <label><input type="radio" name="hueCircle" value="マンセル表色系" data-hue-circle="munsell" onChange={changeAccentColor} />マンセル</label>
+          <label><input type="radio" name="hueCircle" value="オストワルト表色系" data-hue-circle="ostwald" onChange={changeAccentColor} />オストワルト</label>
+          <label><input type="radio" name="hueCircle" value="PCCS表色系" data-hue-circle="pccs" onChange={changeAccentColor} />PCCS</label>
+          <label><input type="radio" name="hueCircle" value="イッテン表色系" data-hue-circle="itten" onChange={changeAccentColor} defaultChecked />イッテン</label>
+          <label><input type="radio" name="hueCircle" value="NCS表色系" data-hue-circle="ncs" onChange={changeAccentColor} />NCS</label>
         </section>
         <section className="baseColor">
           <h2>ベースカラー<span>（H:{baseHue}, S:{baseSaturation}, B:{baseBrightness}）</span></h2>

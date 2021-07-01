@@ -21,7 +21,7 @@
             "hue": 118,
             "saturation": 100,
             "brightness": 100,
-            "hueCircle": "イッテン色相環",
+            "hueCircle": "イッテン表色系",
             "hueCircleKey": "itten"
         },
         "baseColor": {

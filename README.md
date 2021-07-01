@@ -4,8 +4,8 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 * ベースカラーのコントラストのステップをなくしてみる [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
-* アクセントカラーの再計測と詳細データ追加 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 
 ## ブログ
 
