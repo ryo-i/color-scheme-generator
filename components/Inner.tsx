@@ -152,9 +152,11 @@ function Inner() {
 
       // Base Color
       setBaseHue(hsb.h);
-      setBaseSaturation(baseSaturation);
-      setBaseBrightness(baseBrightness);
-      const baseHex = hsbToHex(hsb.h, baseSaturation, baseBrightness);
+      const getBaseSaturation = baseColorSaturation(contrast, hsb.s);
+      const getBaseBrightness = baseColorBrightness(contrast, hsb.b);
+      setBaseSaturation(getBaseSaturation);
+      setBaseBrightness(getBaseBrightness);
+      const baseHex = hsbToHex(hsb.h, getBaseSaturation, getBaseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'accentColor') {
       setAccentHue(hsb.h);
