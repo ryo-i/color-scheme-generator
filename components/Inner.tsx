@@ -174,9 +174,11 @@ function Inner() {
 
       // Base Color
       setBaseHue(getMainHue);
-      setBaseSaturation(baseSaturation);
-      setBaseBrightness(baseBrightness);
-      const baseHex = hsbToHex(getMainHue, baseSaturation, baseBrightness);
+      const getBaseSaturation = baseColorSaturation(contrast, hsb.s);
+      const getBaseBrightness = baseColorBrightness(contrast, hsb.b);
+      setBaseSaturation(getBaseSaturation);
+      setBaseBrightness(getBaseBrightness);
+      const baseHex = hsbToHex(getMainHue, getBaseSaturation, getBaseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'baseColor') {
       setBaseHue(hsb.h);
