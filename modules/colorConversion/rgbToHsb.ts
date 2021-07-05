@@ -23,7 +23,14 @@ const setHue = (r: number, g: number, b: number, max: number, min: number) => {
 };
 
 const setSaturation = (max: number, min: number) => {
-    const saturation: number = Math.round((max - min) / max * 100);
+    let saturation: number = 0;
+    const difference = max - min;
+    if (difference === 0) {
+        saturation = 0;
+    } else {
+        saturation = Math.round((max - min) / max * 100);
+    }
+
     return saturation;
 };
 
