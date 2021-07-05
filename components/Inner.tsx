@@ -9,6 +9,8 @@ import { hsbToHex } from '../modules/colorConversion/hsbToHex';
 import { accentColorHue } from '../modules/colorConversion/accentColorHue';
 import { baseColorSaturation } from '../modules/colorConversion/baseColorSaturation';
 import { baseColorBrightness } from '../modules/colorConversion/baseColorBrightness';
+import { mainColorSaturation } from '../modules/colorConversion/mainColorSaturation';
+import { mainColorBrightness } from '../modules/colorConversion/mainColorBrightness';
 
 
 // Style
@@ -186,19 +188,22 @@ function Inner() {
       setBaseBrightness(hsb.b);
       setBaseColor(getValue);
 
+      const getMainSaturation = mainColorSaturation(contrast, hsb.s);
+      const getMainBrightness = mainColorBrightness(contrast, hsb.b);
+
       // Main Color
       setMainHue(hsb.h);
-      setMainSaturation(mainSaturation);
-      setMainBrightness(mainBrightness);
-      const mainHex = hsbToHex(hsb.h, mainSaturation, mainBrightness);
+      setMainSaturation(getMainSaturation);
+      setMainBrightness(getMainBrightness);
+      const mainHex = hsbToHex(hsb.h, getMainSaturation, getMainBrightness);
       setMainColor(mainHex);
 
       // Accent Color
       const getAccentHue = accentColorHue(hsb.h, hueCircleKey);
       setAccentHue(getAccentHue);
-      setAccentSaturation(accentSaturation);
-      setAccentBrightness(accentBrightness);
-      const accentHex = hsbToHex(getAccentHue, accentSaturation, accentBrightness);
+      setAccentSaturation(getMainSaturation);
+      setAccentBrightness(getMainBrightness);
+      const accentHex = hsbToHex(getAccentHue, getMainSaturation, getMainBrightness);
       setAccentColor(accentHex);
     }
   };
