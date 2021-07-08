@@ -28,7 +28,7 @@
             "hue": 0,
             "saturation": 20,
             "brightness": 100,
-            "contrast": 20
+            "contrast": -80
         },
         "hueCircle": {
             "hsb": [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330],

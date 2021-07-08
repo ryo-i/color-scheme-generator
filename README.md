@@ -4,6 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* ベースカラーの範囲を-100〜100%に変更（計算式はまだ） [#22](https://github.com/ryo-i/color-scheme-generator/issues/22)
 * ベースカラーからアクセントカラーのS算出をコード化（苦戦中) [#21](https://github.com/ryo-i/color-scheme-generator/issues/21)
 * アクセントカラーのモジュールを複製してメインカラーのモジュールを作成 [#11](https://github.com/ryo-i/color-scheme-generator/issues/11)
 * アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)

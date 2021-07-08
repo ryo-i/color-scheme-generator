@@ -343,7 +343,7 @@ function Inner() {
         <section className="baseColor">
           <h2>ベースカラー<span>（H:{baseHue}, S:{baseSaturation}, B:{baseBrightness}）</span></h2>
           <p>コントラスト：{contrast}%</p>
-          <input type="range" name="contrast" value={contrast} min="0" max="200" onChange={changeBaseColor} />
+          <input type="range" name="contrast" value={contrast} min="-100" max="100" onChange={changeBaseColor} />
         </section>
       </Generator>
     </>
