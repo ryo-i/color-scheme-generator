@@ -10,7 +10,7 @@ const baseColorBrightness = (contrast: number, brightness: number) => {
         const increaseBrightness = brightnessDiff * increaseRate;
         baseColorBrightness = increaseBrightness + brightness;
     } else if (contrast > 0) {
-        const increaseDiff = 200 - contrast;
+        const increaseDiff = 100 - contrast;
         const increaseRate = increaseDiff / 100;
         baseColorBrightness = brightness * increaseRate;
     }
