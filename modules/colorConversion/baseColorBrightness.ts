@@ -4,7 +4,7 @@ const baseColorBrightness = (contrast: number, brightness: number) => {
     if (contrast == 0) {
         baseColorBrightness = brightness;
     } else if (contrast < 0) {
-        baseColorBrightness = (100 - brightness) * (-1 * (contrast / 100)) + brightness;
+        baseColorBrightness = brightness - (100 - brightness) * (contrast / 100)
     } else if (contrast > 0) {
         baseColorBrightness = brightness * (1 - (contrast / 100));
     }

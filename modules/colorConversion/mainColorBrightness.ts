@@ -4,15 +4,9 @@ const mainColorBrightness = (contrast: number, brightness: number) => {
     if (contrast == 0) {
         mainColorBrightness = brightness;
     } else if (contrast < 0) {
-        const brightnessDiff = 100 - brightness;
-        const increase = 100 - contrast;
-        const increaseRate = increase / 100;
-        const increaseBrightness = brightnessDiff * increaseRate;
-        mainColorBrightness = increaseBrightness + brightness;
+        mainColorBrightness = (brightness + contrast) / (1 + (contrast / 100))
     } else if (contrast > 0) {
-        const increaseDiff = 200 - contrast;
-        const increaseRate = increaseDiff / 100;
-        mainColorBrightness = brightness * increaseRate;
+        mainColorBrightness = brightness / (1 - (contrast / 100))
     }
 
     return Math.round(mainColorBrightness);
