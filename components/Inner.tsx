@@ -193,17 +193,17 @@ function Inner() {
 
       // Main Color
       setMainHue(hsb.h);
-      setMainSaturation(getMainSaturation);
-      setMainBrightness(getMainBrightness);
-      const mainHex = hsbToHex(hsb.h, getMainSaturation, getMainBrightness);
+      setMainSaturation(getMainSaturation.saturation);
+      setMainBrightness(getMainBrightness.brightness);
+      const mainHex = hsbToHex(hsb.h, getMainSaturation.saturation, getMainBrightness.brightness);
       setMainColor(mainHex);
 
       // Accent Color
       const getAccentHue = accentColorHue(hsb.h, hueCircleKey);
       setAccentHue(getAccentHue);
-      setAccentSaturation(getMainSaturation);
-      setAccentBrightness(getMainBrightness);
-      const accentHex = hsbToHex(getAccentHue, getMainSaturation, getMainBrightness);
+      setAccentSaturation(getMainSaturation.saturation);
+      setAccentBrightness(getMainBrightness.brightness);
+      const accentHex = hsbToHex(getAccentHue, getMainSaturation.saturation, getMainBrightness.brightness);
       setAccentColor(accentHex);
     }
   };
