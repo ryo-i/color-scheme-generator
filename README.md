@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* コントラストのチェック結果をコンソールに表示 [#23](https://github.com/ryo-i/color-scheme-generator/issues/23)
+* コントラスト変更モジュール作成（絶対値を返す） [#23](https://github.com/ryo-i/color-scheme-generator/issues/23)
 * メインカラーとアクセントカラーの彩度が不一致 [#20](https://github.com/ryo-i/color-scheme-generator/issues/20)
 * アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 * カラーピッカーのベースカラーとメインカラーのH値が一致しない [#18](https://github.com/ryo-i/color-scheme-generator/issues/18)

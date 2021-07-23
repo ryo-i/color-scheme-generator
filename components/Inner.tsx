@@ -11,6 +11,7 @@ import { baseColorSaturation } from '../modules/colorConversion/baseColorSaturat
 import { baseColorBrightness } from '../modules/colorConversion/baseColorBrightness';
 import { mainColorSaturation } from '../modules/colorConversion/mainColorSaturation';
 import { mainColorBrightness } from '../modules/colorConversion/mainColorBrightness';
+import { changeConstract } from '../modules/colorConversion/changeConstract';
 
 
 // Style
@@ -188,8 +189,13 @@ function Inner() {
       setBaseBrightness(hsb.b);
       setBaseColor(getValue);
 
-      const getMainSaturation = mainColorSaturation(contrast, hsb.s);
-      const getMainBrightness = mainColorBrightness(contrast, hsb.b);
+      const gettConstract = changeConstract(contrast, hsb.s, hsb.b);
+      const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
+      const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
+      console.log('gettConstract->', gettConstract);
+
+      // Constract
+      setContrast(gettConstract);
 
       // Main Color
       setMainHue(hsb.h);
