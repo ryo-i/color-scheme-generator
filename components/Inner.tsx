@@ -192,24 +192,26 @@ function Inner() {
       const gettConstract = changeConstract(contrast, hsb.s, hsb.b);
       const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
       const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
-      console.log('gettConstract->', gettConstract);
+      console.log('gettConstract->' , gettConstract);
+      console.log('getMainSaturation->' , getMainSaturation);
+      console.log('getMainBrightness->' , getMainBrightness);
 
       // Constract
       setContrast(gettConstract);
 
       // Main Color
       setMainHue(hsb.h);
-      setMainSaturation(getMainSaturation.saturation);
-      setMainBrightness(getMainBrightness.brightness);
-      const mainHex = hsbToHex(hsb.h, getMainSaturation.saturation, getMainBrightness.brightness);
+      setMainSaturation(getMainSaturation);
+      setMainBrightness(getMainBrightness);
+      const mainHex = hsbToHex(hsb.h, getMainSaturation, getMainBrightness);
       setMainColor(mainHex);
 
       // Accent Color
       const getAccentHue = accentColorHue(hsb.h, hueCircleKey);
       setAccentHue(getAccentHue);
-      setAccentSaturation(getMainSaturation.saturation);
-      setAccentBrightness(getMainBrightness.brightness);
-      const accentHex = hsbToHex(getAccentHue, getMainSaturation.saturation, getMainBrightness.brightness);
+      setAccentSaturation(getMainSaturation);
+      setAccentBrightness(getMainBrightness);
+      const accentHex = hsbToHex(getAccentHue, getMainSaturation, getMainBrightness);
       setAccentColor(accentHex);
     }
   };
