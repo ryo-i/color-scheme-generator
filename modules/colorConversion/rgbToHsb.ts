@@ -11,7 +11,7 @@ const setHue = (r: number, g: number, b: number, max: number, min: number) => {
         const result = 60 * ((b - r) / (difference)) + 120;
         hue = Math.round(result);
     } else if (max === b) {
-        const result = 60 * ((g - b) / (difference)) + 240;
+        const result = 60 * ((r - g) / (difference)) + 240;
         hue = Math.round(result);
     }
 

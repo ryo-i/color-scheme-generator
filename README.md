@@ -4,10 +4,10 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* オーバーフローの時にコントラスト比を変動させる処理作成 [#23](https://github.com/ryo-i/color-scheme-generator/issues/23)
+* RGB→HSBで青が最大値の時の計算を修正 [#18](https://github.com/ryo-i/color-scheme-generator/issues/18)
 * メインカラーとアクセントカラーの彩度が不一致 [#20](https://github.com/ryo-i/color-scheme-generator/issues/20)
 * アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
-* カラーピッカーのベースカラーとメインカラーのH値が一致しない [#18](https://github.com/ryo-i/color-scheme-generator/issues/18)
+
 
 ## ブログ
 
