@@ -249,7 +249,7 @@ function Inner() {
       setAccentBrightness(getValue);
       setBaseBrightness(getBaseBrightness);
       mainRgb = hsbToRgb(mainHue, mainSaturation, getValue);
-      accentRgb = hsbToRgb(accentHue, getValue, getValue);
+      accentRgb = hsbToRgb(accentHue, accentSaturation, getValue);
       baseRgb = hsbToRgb(baseHue, baseSaturation, getBaseBrightness);
     }
 

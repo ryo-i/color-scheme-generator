@@ -4,8 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* RGB→HSBで青が最大値の時の計算を修正 [#18](https://github.com/ryo-i/color-scheme-generator/issues/18)
-* メインカラーとアクセントカラーの彩度が不一致 [#20](https://github.com/ryo-i/color-scheme-generator/issues/20)
+* メインカラー明度変更時の処理の間違いを修正 [#20](https://github.com/ryo-i/color-scheme-generator/issues/20)
 * アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 
 
