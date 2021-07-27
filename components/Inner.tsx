@@ -140,6 +140,7 @@ function Inner() {
     const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
 
     if (getName === 'mainColor') {
+      // Main Color
       setMainHue(hsb.h);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
@@ -162,6 +163,7 @@ function Inner() {
       const baseHex = hsbToHex(hsb.h, getBaseSaturation, getBaseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'accentColor') {
+      // Accent Color
       setAccentHue(hsb.h);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
@@ -184,22 +186,22 @@ function Inner() {
       const baseHex = hsbToHex(getMainHue, getBaseSaturation, getBaseBrightness);
       setBaseColor(baseHex);
     } else if (getName === 'baseColor') {
+      // Base Color
       setBaseHue(hsb.h);
       setBaseSaturation(hsb.s);
       setBaseBrightness(hsb.b);
       setBaseColor(getValue);
 
+      // Contrast
       const gettConstract = changeConstract(contrast, hsb.s, hsb.b);
-      const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
-      const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
       console.log('gettConstract->' , gettConstract);
-      console.log('getMainSaturation->' , getMainSaturation);
-      console.log('getMainBrightness->' , getMainBrightness);
-
-      // Constract
       setContrast(gettConstract);
 
       // Main Color
+      const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
+      const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
+      console.log('getMainSaturation->' , getMainSaturation);
+      console.log('getMainBrightness->' , getMainBrightness);
       setMainHue(hsb.h);
       setMainSaturation(getMainSaturation);
       setMainBrightness(getMainBrightness);
@@ -252,19 +254,19 @@ function Inner() {
     }
 
     // Main Color
-    console.log(mainRgb);
+    console.log('mainRgb->', mainRgb);
     const mainHex: string = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
-    console.log(mainHex);
+    console.log('mainHex->', mainHex);
     setMainColor(mainHex);
 
     // Accent Color
-    console.log(accentRgb);
+    console.log('accentRgb->', accentRgb);
     const accentHex: string = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
-    console.log(accentHex);
+    console.log('accentHex->', accentHex);
     setAccentColor(accentHex);
 
     // Base Color
-    console.log(baseRgb);
+    console.log('baseRgb->', baseRgb);
     const baseHex: string = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
     setBaseColor(baseHex);
   };
@@ -275,9 +277,9 @@ function Inner() {
     const hueCircleKey: string = e.target.dataset.hueCircle;
     const keyColor: number[] = inner.hueCircle[hueCircleKey];
     const mainColorHue: number = mainHue;
-    console.log('hueCircleKey->' + hueCircleKey);
-    console.log('keyColor->' + keyColor);
-    console.log('keyColorLenght->' + keyColor.length);
+    console.log('hueCircleKey->', hueCircleKey);
+    console.log('keyColor->', keyColor);
+    console.log('keyColorLenght->', keyColor.length);
 
     const getAccentHue = accentColorHue(mainColorHue, hueCircleKey);
     const accentHex = hsbToHex(getAccentHue, accentSaturation, accentBrightness);
