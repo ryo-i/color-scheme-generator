@@ -4,9 +4,9 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* メインカラー明度変更時の処理の間違いを修正 [#20](https://github.com/ryo-i/color-scheme-generator/issues/20)
-* アクセントカラーのvalueを変更（色相環→表色系） [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
-
+* 配色ジェネレーターと色相環の数値を比較中 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
+* コードのリファクタリングしたい [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
+* About（ドキュメント）ページ作成したい [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
 
 ## ブログ
 
