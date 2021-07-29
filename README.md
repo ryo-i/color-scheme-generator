@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* 配色ジェネレーターと色相環の数値を比較中 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
+* 色相の計測値と自動計算を比較中(マンセル、オストワルト、PCCS) [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 * コードのリファクタリングしたい [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
 * About（ドキュメント）ページ作成したい [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
 
