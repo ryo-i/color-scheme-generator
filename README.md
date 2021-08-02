@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* 明度、彩度の初期値を90に、コントラストを-90%に [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
+* data.jsonの追加色相を削除 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
 * コードのリファクタリングしたい [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
 * About（ドキュメント）ページ作成したい [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
 
