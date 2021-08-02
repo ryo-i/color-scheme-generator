@@ -8,27 +8,27 @@
     },
     "inner": {
         "colorPicker": {
-            "mainColor": "#ff0000",
-            "accentColor": "#09ff00",
-            "baseColor": "#ffcccc"
+            "mainColor": "#e61717",
+            "accentColor": "#1ee617",
+            "baseColor": "#fce6e6"
         },
         "mainColor": {
             "hue": 0,
-            "saturation": 100,
-            "brightness": 100
+            "saturation": 90,
+            "brightness": 90
         },
         "accentColor": {
             "hue": 118,
-            "saturation": 100,
-            "brightness": 100,
+            "saturation": 90,
+            "brightness": 90,
             "hueCircle": "イッテン表色系",
             "hueCircleKey": "itten"
         },
         "baseColor": {
             "hue": 0,
-            "saturation": 20,
-            "brightness": 100,
-            "contrast": -80
+            "saturation": 9,
+            "brightness": 99,
+            "contrast": -90
         },
         "hueCircle": {
             "hsb": [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330],
