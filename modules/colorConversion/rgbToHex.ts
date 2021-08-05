@@ -4,7 +4,6 @@ const rgbToHex = (r: number, g: number, b: number) => {
         g: String(('00' + g.toString(16)).slice(-2)),
         b: String(('00' + b.toString(16)).slice(-2))
     };
-    console.log(rgbHex);
 
     const hex: string = '#' + rgbHex.r + rgbHex.g + rgbHex.b;
 

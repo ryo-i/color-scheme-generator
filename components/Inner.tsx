@@ -128,11 +128,6 @@ function Inner() {
   const [contrast, setContrast] = useState(inner.baseColor.contrast);
 
 
-  useEffect(() => {
-    // ページ読み込み時の処理
-  }, []);
-
-
   const changeColorPicker = (e: React.ChangeEvent<HTMLInputElement>) => {
     const getName:string = String(e.target.name);
     const getValue: string = String(e.target.value);
@@ -194,14 +189,11 @@ function Inner() {
 
       // Contrast
       const gettConstract = changeConstract(contrast, hsb.s, hsb.b);
-      console.log('gettConstract->' , gettConstract);
       setContrast(gettConstract);
 
       // Main Color
       const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
       const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
-      console.log('getMainSaturation->' , getMainSaturation);
-      console.log('getMainBrightness->' , getMainBrightness);
       setMainHue(hsb.h);
       setMainSaturation(getMainSaturation);
       setMainBrightness(getMainBrightness);
@@ -254,19 +246,14 @@ function Inner() {
     }
 
     // Main Color
-    console.log('mainRgb->', mainRgb);
     const mainHex: string = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
-    console.log('mainHex->', mainHex);
     setMainColor(mainHex);
 
     // Accent Color
-    console.log('accentRgb->', accentRgb);
     const accentHex: string = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
-    console.log('accentHex->', accentHex);
     setAccentColor(accentHex);
 
     // Base Color
-    console.log('baseRgb->', baseRgb);
     const baseHex: string = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
     setBaseColor(baseHex);
   };
@@ -277,10 +264,6 @@ function Inner() {
     const hueCircleKey: string = e.target.dataset.hueCircle;
     const keyColor: number[] = inner.hueCircle[hueCircleKey];
     const mainColorHue: number = mainHue;
-    console.log('hueCircleKey->', hueCircleKey);
-    console.log('keyColor->', keyColor);
-    console.log('keyColorLenght->', keyColor.length);
-
     const getAccentHue = accentColorHue(mainColorHue, hueCircleKey);
     const accentHex = hsbToHex(getAccentHue, accentSaturation, accentBrightness);
     setAccentHue(getAccentHue);
