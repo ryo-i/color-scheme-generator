@@ -105,9 +105,9 @@ const Generator = styled.div`
 // Component
 function Inner() {
   // Color Picker Hooks
-  const [mainColor, setMainColor] = useState(inner.colorPicker.mainColor);
-  const [accentColor, setAccentColor] = useState(inner.colorPicker.accentColor);
-  const [baseColor, setBaseColor] = useState(inner.colorPicker.baseColor);
+  const [mainHex, setMainHex] = useState(inner.colorPicker.mainHex);
+  const [accentHex, setAccentHex] = useState(inner.colorPicker.accentHex);
+  const [baseHex, setBaseHex] = useState(inner.colorPicker.baseHex);
 
   // Main Color Hooks
   const [mainHue, setMainHue] = useState(inner.mainColor.hue);
@@ -135,93 +135,93 @@ function Inner() {
     const rgb = hexToRgb(getValue);
     const hsb = rgbToHsb(rgb.r, rgb.g, rgb.b);
 
-    if (getName === 'mainColor') {
+    if (getName === 'mainHex') {
       // Main Color
       setMainHue(hsb.h);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
-      setMainColor(getValue);
+      setMainHex(getValue);
 
       // Accent Color
-      const getAccentHue = accentColorHue(hsb.h, hueCircleKey);
-      const accentHex = hsbToHex(getAccentHue, hsb.s, hsb.b);
+      const getAccentHue: number = accentColorHue(hsb.h, hueCircleKey);
+      const getAccentHex: string = hsbToHex(getAccentHue, hsb.s, hsb.b);
       setAccentHue(getAccentHue);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
-      setAccentColor(accentHex);
+      setAccentHex(getAccentHex);
 
       // Base Color
-      const getBaseSaturation = baseColorSaturation(contrast, hsb.s);
-      const getBaseBrightness = baseColorBrightness(contrast, hsb.b);
-      const baseHex = hsbToHex(hsb.h, getBaseSaturation, getBaseBrightness);
+      const getBaseSaturation: number = baseColorSaturation(contrast, hsb.s);
+      const getBaseBrightness: number = baseColorBrightness(contrast, hsb.b);
+      const getBaseHex: string = hsbToHex(hsb.h, getBaseSaturation, getBaseBrightness);
       setBaseHue(hsb.h);
       setBaseSaturation(getBaseSaturation);
       setBaseBrightness(getBaseBrightness);
-      setBaseColor(baseHex);
-    } else if (getName === 'accentColor') {
+      setBaseHex(getBaseHex);
+    } else if (getName === 'accentHex') {
       // Accent Color
       setAccentHue(hsb.h);
       setAccentSaturation(hsb.s);
       setAccentBrightness(hsb.b);
-      setAccentColor(getValue);
+      setAccentHex(getValue);
 
       // Main Color
-      const getMainHue = accentColorHue(hsb.h, hueCircleKey);
-      const mainHex = hsbToHex(getMainHue, hsb.s, hsb.b);
+      const getMainHue: number = accentColorHue(hsb.h, hueCircleKey);
+      const getMainHex: string = hsbToHex(getMainHue, hsb.s, hsb.b);
       setMainHue(getMainHue);
       setMainSaturation(hsb.s);
       setMainBrightness(hsb.b);
-      setMainColor(mainHex);
+      setMainHex(getMainHex);
 
       // Base Color
-      const getBaseSaturation = baseColorSaturation(contrast, hsb.s);
-      const getBaseBrightness = baseColorBrightness(contrast, hsb.b);
-      const baseHex = hsbToHex(getMainHue, getBaseSaturation, getBaseBrightness);
+      const getBaseSaturation: number = baseColorSaturation(contrast, hsb.s);
+      const getBaseBrightness: number = baseColorBrightness(contrast, hsb.b);
+      const getBaseHex: string = hsbToHex(getMainHue, getBaseSaturation, getBaseBrightness);
       setBaseHue(getMainHue);
       setBaseSaturation(getBaseSaturation);
       setBaseBrightness(getBaseBrightness);
-      setBaseColor(baseHex);
-    } else if (getName === 'baseColor') {
+      setBaseHex(getBaseHex);
+    } else if (getName === 'baseHex') {
       // Base Color
       setBaseHue(hsb.h);
       setBaseSaturation(hsb.s);
       setBaseBrightness(hsb.b);
-      setBaseColor(getValue);
+      setBaseHex(getValue);
 
       // Contrast
-      const gettConstract = changeConstract(contrast, hsb.s, hsb.b);
-      setContrast(gettConstract);
+      const getConstract: number = changeConstract(contrast, hsb.s, hsb.b);
+      setContrast(getConstract);
 
       // Main Color
-      const getMainSaturation = mainColorSaturation(gettConstract, hsb.s);
-      const getMainBrightness = mainColorBrightness(gettConstract, hsb.b);
-      const mainHex = hsbToHex(hsb.h, getMainSaturation, getMainBrightness);
+      const getMainSaturation: number = mainColorSaturation(getConstract, hsb.s);
+      const getMainBrightness: number = mainColorBrightness(getConstract, hsb.b);
+      const getMainHex: string = hsbToHex(hsb.h, getMainSaturation, getMainBrightness);
       setMainHue(hsb.h);
       setMainSaturation(getMainSaturation);
       setMainBrightness(getMainBrightness);
-      setMainColor(mainHex);
+      setMainHex(getMainHex);
 
       // Accent Color
-      const getAccentHue = accentColorHue(hsb.h, hueCircleKey);
-      const accentHex = hsbToHex(getAccentHue, getMainSaturation, getMainBrightness);
+      const getAccentHue: number = accentColorHue(hsb.h, hueCircleKey);
+      const getAccentHex: string = hsbToHex(getAccentHue, getMainSaturation, getMainBrightness);
       setAccentHue(getAccentHue);
       setAccentSaturation(getMainSaturation);
       setAccentBrightness(getMainBrightness);
-      setAccentColor(accentHex);
+      setAccentHex(getAccentHex);
     }
   };
 
 
   // Change Main Color
   const changeMainColor = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const getName:string = String(e.target.name);
+    const getName: string = String(e.target.name);
     const getValue: number = Number(e.target.value);
     let mainRgb: {r: number, g: number, b: number};
     let accentRgb: {r: number, g: number, b: number};
     let baseRgb: {r: number, g: number, b: number};
 
     if (getName === 'hue') {
-      const getAccentHue = accentColorHue(getValue, hueCircleKey);
+      const getAccentHue: number = accentColorHue(getValue, hueCircleKey);
       setMainHue(getValue);
       setAccentHue(getAccentHue);
       setBaseHue(getValue);
@@ -229,7 +229,7 @@ function Inner() {
       accentRgb = hsbToRgb(getAccentHue, accentSaturation, accentBrightness);
       baseRgb = hsbToRgb(getValue, baseSaturation, baseBrightness);
     } else if (getName === 'saturation') {
-      const getBaseSaturation = baseColorSaturation(contrast, getValue);
+      const getBaseSaturation: number = baseColorSaturation(contrast, getValue);
       setMainSaturation(getValue);
       setAccentSaturation(getValue);
       setBaseSaturation(getBaseSaturation);
@@ -237,7 +237,7 @@ function Inner() {
       accentRgb = hsbToRgb(accentHue, getValue, accentBrightness);
       baseRgb = hsbToRgb(baseHue, getBaseSaturation, baseBrightness);
     } else if (getName === 'brightness') {
-      const getBaseBrightness = baseColorBrightness(contrast, getValue);
+      const getBaseBrightness: number = baseColorBrightness(contrast, getValue);
       setMainBrightness(getValue);
       setAccentBrightness(getValue);
       setBaseBrightness(getBaseBrightness);
@@ -246,17 +246,12 @@ function Inner() {
       baseRgb = hsbToRgb(baseHue, baseSaturation, getBaseBrightness);
     }
 
-    // Main Color
-    const mainHex: string = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
-    setMainColor(mainHex);
-
-    // Accent Color
-    const accentHex: string = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
-    setAccentColor(accentHex);
-
-    // Base Color
-    const baseHex: string = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
-    setBaseColor(baseHex);
+    const getMainHex: string = rgbToHex(mainRgb.r, mainRgb.g, mainRgb.b);
+    const getAccentHex: string = rgbToHex(accentRgb.r, accentRgb.g, accentRgb.b);
+    const getBaseHex: string = rgbToHex(baseRgb.r, baseRgb.g, baseRgb.b);
+    setMainHex(getMainHex);
+    setAccentHex(getAccentHex);
+    setBaseHex(getBaseHex);
   };
 
 
@@ -266,9 +261,9 @@ function Inner() {
     const hueCircleKey: string = e.target.dataset.hueCircle;
     const mainColorHue: number = mainHue;
     const getAccentHue = accentColorHue(mainColorHue, hueCircleKey);
-    const accentHex = hsbToHex(getAccentHue, accentSaturation, accentBrightness);
+    const getAccentHex = hsbToHex(getAccentHue, accentSaturation, accentBrightness);
     setAccentHue(getAccentHue);
-    setAccentColor(accentHex);
+    setAccentHex(getAccentHex);
     setHueCircle(getValue);
     setHueCircleKey(hueCircleKey);
   };
@@ -279,23 +274,23 @@ function Inner() {
     const getValue: number = Number(e.target.value);
     const getBaseSaturation = baseColorSaturation(getValue, mainSaturation);
     const getBaseBrightness = baseColorBrightness(getValue, mainBrightness);
-    const baseHex = hsbToHex(baseHue, getBaseSaturation, getBaseBrightness);
+    const getBaseHex = hsbToHex(baseHue, getBaseSaturation, getBaseBrightness);
     setContrast(getValue);
     setBaseSaturation(getBaseSaturation);
     setBaseBrightness(getBaseBrightness);
-    setBaseColor(baseHex);
+    setBaseHex(getBaseHex);
   };
 
 
   // Change CSS
   const mainColorPalette = {
-    background: mainColor
+    background: mainHex
   }
   const accentColorPalette = {
-    background: accentColor
+    background: accentHex
   }
   const baseColorPalette = {
-    background: baseColor
+    background: baseHex
   }
 
 
@@ -310,9 +305,9 @@ function Inner() {
         </div>
         <p className="colorPicker">
           カラーピッカー：
-          <label><input type="color" name="mainColor" value={mainColor} onChange={changeColorPicker} />{mainColor}</label>
-          <label><input type="color" name="accentColor" value={accentColor} onChange={changeColorPicker} />{accentColor}</label>
-          <label><input type="color" name="baseColor" value={baseColor} onChange={changeColorPicker} />{baseColor}</label>
+          <label><input type="color" name="mainHex" value={mainHex} onChange={changeColorPicker} />{mainHex}</label>
+          <label><input type="color" name="accentHex" value={accentHex} onChange={changeColorPicker} />{accentHex}</label>
+          <label><input type="color" name="baseHex" value={baseHex} onChange={changeColorPicker} />{baseHex}</label>
         </p>
       </Result>
       <Generator>

@@ -4,7 +4,6 @@ const accentColorHue = (mainColorHue: number, hueCircleKey: string) => {
     const keyColor: number[] = inner.hueCircle[hueCircleKey];
     const KeyLength: number = keyColor.length;
     const keyHalfLength: number = KeyLength /2;
-
     let mainColorNum: number = 0;
     let mainColorKey: number = 0;
     let mainColorDiff: number = 0;

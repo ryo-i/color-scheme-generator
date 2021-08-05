@@ -1,6 +1,6 @@
 const mainColorSaturation = (contrast: number, saturation: number) => {
     let resultSaturation: number = 0;
-    const absContrast = Math.abs(contrast);
+    const absContrast: number = Math.abs(contrast);
 
     if (contrast == 0) {
         resultSaturation = saturation;

@@ -2,7 +2,6 @@ const hsbToRgb = (h: number, s: number, b: number) => {
     let red: number = 0;
     let green: number = 0;
     let blue: number = 0;
-
     const max: number = (b / 100) * 255;
     const min: number = Math.round(max - ((s / 100) * max));
     const diff: number = max - min;

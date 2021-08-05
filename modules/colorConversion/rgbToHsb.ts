@@ -1,6 +1,6 @@
 const setHue = (r: number, g: number, b: number, max: number, min: number) => {
     let hue: number = 0;
-    const difference = max - min;
+    const difference: number = max - min;
 
     if (difference === 0) {
         hue = 0;
@@ -24,7 +24,7 @@ const setHue = (r: number, g: number, b: number, max: number, min: number) => {
 
 const setSaturation = (max: number, min: number) => {
     let saturation: number = 0;
-    const difference = max - min;
+    const difference: number = max - min;
     if (difference === 0) {
         saturation = 0;
     } else {
@@ -44,9 +44,9 @@ const rgbToHsb = (r: number, g: number, b: number) => {
     const max: number = Math.max(r, g, b);
     const min: number = Math.min(r, g, b);
 
-    const hue = setHue(r, g, b, max, min);
-    const saturation = setSaturation(max, min);
-    const brightness = setBrightness(max, min);
+    const hue: number = setHue(r, g, b, max, min);
+    const saturation: number = setSaturation(max, min);
+    const brightness: number = setBrightness(max, min);
 
     const hsb: {h: number, s: number, b: number} = {
         h: hue,

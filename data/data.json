@@ -8,9 +8,9 @@
     },
     "inner": {
         "colorPicker": {
-            "mainColor": "#e61717",
-            "accentColor": "#1ee617",
-            "baseColor": "#fce6e6"
+            "mainHex": "#e61717",
+            "accentHex": "#1ee617",
+            "baseHex": "#fce6e6"
         },
         "mainColor": {
             "hue": 0,
