@@ -4,8 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* コンソールログの削除など [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
-* data.jsonの追加色相を削除 [#15](https://github.com/ryo-i/color-scheme-generator/issues/15)
+* コメント追加、順序入れ替えなど [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
 * About（ドキュメント）ページ作成したい [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
 
 ## ブログ
