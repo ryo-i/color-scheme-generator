@@ -7,7 +7,7 @@ import Data from '../data/data.json';
 
 const headerTitle = Data.header.title;
 const pageTitle = 'このアプリについて';
-const pageText = 'アプリの概要をここに書く。';
+const pageText = 'メインカラー、アクセントカラー、ベースカラーの3色を設定できる配色ジェネレーターです。';
 const headTitle = pageTitle + ' | ' + headerTitle;
 
 
@@ -29,15 +29,28 @@ function About() {
             <section>
                 <h2>使い方</h2>
                 <section>
-                    <h3>タイトル</h3>
+                    <h3>このアプリの特徴</h3>
+                    <ul>
+                        <li>カラーピッカーからも色を設定でき、結果はHexの6桁に表示されます</li>
+                        <li>メインカラーは色相(H)、彩度(S)、明度(B)で変更できます</li>
+                        <li>アクセントカラーはメインカラーに対する補色で、表色系により位置が変わります</li>
+                        <li>ベースカラーはメインカラーとのコントラストによって0-99%は薄く、101-200%は濃くなります</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>カラーピッカー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
                 <section>
-                    <h3>タイトル</h3>
+                    <h3>メインカラー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
                 <section>
-                    <h3>タイトル</h3>
+                    <h3>アクセントカラー</h3>
+                    <p>説明説明説明説明説明説明説明説明</p>
+                </section>
+                <section>
+                    <h3>ベースカラー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
             </section>
