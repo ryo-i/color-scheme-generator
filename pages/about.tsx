@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
@@ -9,6 +10,12 @@ const headerTitle = Data.header.title;
 const pageTitle = 'このアプリについて';
 const pageText = 'メインカラー、アクセントカラー、ベースカラーの3色を設定できる配色ジェネレーターです。';
 const headTitle = pageTitle + ' | ' + headerTitle;
+
+
+const Img = styled.img`
+    width: 100%;
+    box-shadow: 0 0 15px 2px rgb(0 0 0 / 10%);
+`;
 
 
 // Component
@@ -31,11 +38,12 @@ function About() {
                 <section>
                     <h3>このアプリの特徴</h3>
                     <ul>
-                        <li>カラーピッカーからも色を設定でき、結果はHexの6桁に表示されます</li>
+                        <li>カラーピッカーからも色を設定でき、結果はHexの6桁が表示されます</li>
                         <li>メインカラーは色相(H)、彩度(S)、明度(B)で変更できます</li>
                         <li>アクセントカラーはメインカラーに対する補色で、表色系により位置が変わります</li>
                         <li>ベースカラーはメインカラーとのコントラストによって0-99%は薄く、101-200%は濃くなります</li>
                     </ul>
+                    <figure><Img src="img/initial.jpg" alt="初期画面" /></figure>
                 </section>
                 <section>
                     <h3>カラーピッカー</h3>
