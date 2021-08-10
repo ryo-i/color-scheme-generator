@@ -12,6 +12,10 @@ const pageText = 'メインカラー、アクセントカラー、ベースカ�
 const headTitle = pageTitle + ' | ' + headerTitle;
 
 
+const Figure = styled.figure`
+    margin: 0 0 20px;
+`;
+
 const Img = styled.img`
     width: 100%;
     box-shadow: 0 0 15px 2px rgb(0 0 0 / 10%);
@@ -38,16 +42,38 @@ function About() {
                 <section>
                     <h3>このアプリの特徴</h3>
                     <ul>
-                        <li>カラーピッカーからも色を設定でき、結果はHexの6桁が表示されます</li>
+                        <li>カラーバーの面積比率はメインカラー(25%)、アクセントカラー (5%)、ベースカラー(70%)</li>
+                        <li>カラーピッカーから色を変更すると他の2色も相関して変更されます</li>
                         <li>メインカラーは色相(H)、彩度(S)、明度(B)で変更できます</li>
                         <li>アクセントカラーはメインカラーに対する補色で、表色系により位置が変わります</li>
-                        <li>ベースカラーはメインカラーとのコントラストによって0-99%は薄く、101-200%は濃くなります</li>
+                        <li>ベースカラーはメインカラーをコントラスト0-99%は薄く、101-200%は濃くした色です</li>
                     </ul>
-                    <figure><Img src="img/initial.jpg" alt="初期画面" /></figure>
+                    <Figure><Img src="img/initial.jpg" alt="初期画面" /></Figure>
                 </section>
                 <section>
                     <h3>カラーピッカー</h3>
-                    <p>説明説明説明説明説明説明説明説明</p>
+                    <p>カラーバーの下のパレットまたはHex値を押すとカラーピッカーが開きます。</p>
+                    <p>下記の画面はPCのChromeブラウザで一つ目のメインカラーのカラーパレットを開いた画面です（なお、カラーピッカーの形状はブラウザによって異なります）。</p>
+                    <Figure>
+                        <Img src="img/cp01.jpg" alt="メインカラーのカラーピッカー" />
+                    </Figure>
+                    <p>メインカラーのカラーピッカーを変更すると、アクセントカラー、ベースカラーも相関して変わります。</p>
+                    <p>下記の図ではメインカラーの彩度(S)、明度(B)を変更したため、他の色の彩度(S)、明度(B)も変わっています</p>
+                    <Figure><Img src="img/cp02.jpg" alt="メインカラーの彩度、明度を変更" /></Figure>
+                    <p>メインカラーの色相(H)を変更すると他の色の色相(H)も変わります。</p>
+                    <Figure><Img src="img/cp03.jpg" alt="メインカラーの色相を変更" /></Figure>
+                    <p>下記の図は二つ目のアクセントカラーを開いたところ</p>
+                    <Figure><Img src="img/cp04.jpg" alt="アクセントカラーのピッカーを開く" /></Figure>
+                    <p>アクセントカラーの彩度(S)、明度(B)を変更すると他の色の彩度(S)、明度(B)も変わります</p>
+                    <Figure><Img src="img/cp05.jpg" alt="アクセントカラーの彩度、明度を変更" /></Figure>
+                    <p>アクセントカラーの色相(H)を変更すると他の色の色相(H)も変わります</p>
+                    <Figure><Img src="img/cp06.jpg" alt="アクセントカラーの色相を変更" /></Figure>
+                    <p>下記の図は三つ目のベースカラーを開いたところ</p>
+                    <Figure><Img src="img/cp07.jpg" alt="ベースカラーの色相を変更" /></Figure>
+                    <p>ベースカラーの彩度(S)、明度(B)を変更すると他の色の彩度(S)、明度(B)も変わります（この時、メインカラーとのコントラストの位置関係を超える場合はコントラストが変わります）。</p>
+                    <Figure><Img src="img/cp08.jpg" alt="ベースカラーの彩度、明度を変更" /></Figure>
+                    <p>ベースカラーの色相(H)を変更すると他の色の色相(H)も変わります</p>
+                    <Figure><Img src="img/cp09.jpg" alt="ベースカラーの色相を変更" /></Figure>
                 </section>
                 <section>
                     <h3>メインカラー</h3>
