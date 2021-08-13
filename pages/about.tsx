@@ -39,7 +39,17 @@ function About() {
             <p dangerouslySetInnerHTML={{ __html: pageText }}></p>
             <section>
                 <h2>使い方</h2>
-                <section>
+                <section id="content">
+                    <h3>目次</h3>
+                    <ul>
+                        <li><a href="#feature">このアプリの特徴</a></li>
+                        <li><a href="#color_picker">カラーピッカー</a></li>
+                        <li><a href="#main_color">メインカラー</a></li>
+                        <li><a href="#accent_color">アクセントカラー</a></li>
+                        <li><a href="#base_color">ベースカラー</a></li>
+                    </ul>
+                </section>
+                <section id="feature">
                     <h3>このアプリの特徴</h3>
                     <ul>
                         <li>カラーバーの面積比率はメインカラー(25%)、アクセントカラー (5%)、ベースカラー(70%)</li>
@@ -50,7 +60,7 @@ function About() {
                     </ul>
                     <Figure><Img src="img/initial.jpg" alt="初期画面" /></Figure>
                 </section>
-                <section>
+                <section id="color_picker">
                     <h3>カラーピッカー</h3>
                     <p>カラーバーの下のパレットまたはHex値を押すとカラーピッカーが開きます。</p>
                     <p>下記の画面はPCのChromeブラウザで一つ目のメインカラーのカラーパレットを開いた画面です（なお、カラーピッカーの形状はブラウザによって異なります）。</p>
@@ -75,15 +85,15 @@ function About() {
                     <p>ベースカラーの色相(H)を変更すると他の色の色相(H)も変わります</p>
                     <Figure><Img src="img/cp09.jpg" alt="ベースカラーの色相を変更" /></Figure>
                 </section>
-                <section>
+                <section id="main_color">
                     <h3>メインカラー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
-                <section>
+                <section id="accent_color">
                     <h3>アクセントカラー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
-                <section>
+                <section id="base_color">
                     <h3>ベースカラー</h3>
                     <p>説明説明説明説明説明説明説明説明</p>
                 </section>
