@@ -23,12 +23,12 @@ const Main = styled.main`
         border-radius: 3px;
     }
     h3 {
-        margin: 0 0 10px;
+        margin: 40px 0 10px;
         padding: 0 0 10px;
         border-bottom: 1px solid #ddd;
     }
     figure {
-        margin: 0 0 20px;
+        margin: 0 0 30px;
         img {
             width: 100%;
             box-shadow: 0 0 15px 2px rgb(0 0 0 / 10%);
@@ -73,17 +73,14 @@ function About() {
                         <li>アクセントカラーはメインカラーに対する補色で、表色系により位置が変わります</li>
                         <li>ベースカラーはメインカラーをコントラスト0-99%は薄く、101-200%は濃くした色です</li>
                     </ul>
-                    <figure><img src="img/initial.jpg" alt="初期画面" /></figure>
                 </section>
                 <section id="color_picker">
                     <h3>カラーピッカー</h3>
                     <p>カラーバーの下のパレットまたはHex値を押すとカラーピッカーが開きます。</p>
+                    <figure><img src="img/initial.jpg" alt="初期画面" /></figure>
                     <p>下記の画面はPCのChromeブラウザで一つ目のメインカラーのカラーパレットを開いた画面です（なお、カラーピッカーの形状はブラウザによって異なります）。</p>
-                    <figure>
-                        <img src="img/cp01.jpg" alt="メインカラーのカラーピッカー" />
-                    </figure>
-                    <p>メインカラーのカラーピッカーを変更すると、アクセントカラー、ベースカラーも相関して変わります。</p>
-                    <p>下記の図ではメインカラーの彩度(S)、明度(B)を変更したため、他の色の彩度(S)、明度(B)も変わっています</p>
+                    <figure><img src="img/cp01.jpg" alt="メインカラーのカラーピッカー" /></figure>
+                    <p>メインカラーのカラーピッカーを変更すると、アクセントカラー、ベースカラーも相関して変わります。メインカラーの彩度(S)、明度(B)を変更したため、他の色の彩度(S)、明度(B)も変わっています。</p>
                     <figure><img src="img/cp02.jpg" alt="メインカラーの彩度、明度を変更" /></figure>
                     <p>メインカラーの色相(H)を変更すると他の色の色相(H)も変わります。</p>
                     <figure><img src="img/cp03.jpg" alt="メインカラーの色相を変更" /></figure>
@@ -102,7 +99,14 @@ function About() {
                 </section>
                 <section id="main_color">
                     <h3>メインカラー</h3>
-                    <p>説明説明説明説明説明説明説明説明</p>
+                    <p>メインカラーは色相(H)、彩度(S)、明度(B)を変更できます。初期値は色相(H)が0、彩度(S)と明度(B)が90です。</p>
+                    <figure><img src="img/initial.jpg" alt="初期画面" /></figure>
+                    <p>色相(H)を変更。アクセントカラーの色相(H)も相関して変わります。</p>
+                    <figure><img src="img/mc01.jpg" alt="xxx" /></figure>
+                    <p>彩度(S)を変更。最初の色より薄くなります。アクセントカラーとベースカラーの彩度(S)も相関して変わります。</p>
+                    <figure><img src="img/mc02.jpg" alt="xxx" /></figure>
+                    <p>明度(B)を変更。最初の色より暗くなります。アクセントカラーとベースカラーの明度(B)も相関して変わります。</p>
+                    <figure><img src="img/mc03.jpg" alt="xxx" /></figure>
                 </section>
                 <section id="accent_color">
                     <h3>アクセントカラー</h3>
