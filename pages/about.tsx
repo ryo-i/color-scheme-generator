@@ -13,6 +13,20 @@ const headTitle = pageTitle + ' | ' + headerTitle;
 
 
 const Main = styled.main`
+    section {
+
+    }
+    h2 {
+        background: #eee;
+        margin: 60px 0 0;
+        padding: 10px;
+        border-radius: 3px;
+    }
+    h3 {
+        margin: 0 0 10px;
+        padding: 0 0 10px;
+        border-bottom: 1px solid #ddd;
+    }
     figure {
         margin: 0 0 20px;
         img {
