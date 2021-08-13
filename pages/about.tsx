@@ -12,13 +12,14 @@ const pageText = 'メインカラー、アクセントカラー、ベースカ�
 const headTitle = pageTitle + ' | ' + headerTitle;
 
 
-const Figure = styled.figure`
-    margin: 0 0 20px;
-`;
-
-const Img = styled.img`
-    width: 100%;
-    box-shadow: 0 0 15px 2px rgb(0 0 0 / 10%);
+const Main = styled.main`
+    figure {
+        margin: 0 0 20px;
+        img {
+            width: 100%;
+            box-shadow: 0 0 15px 2px rgb(0 0 0 / 10%);
+        }
+    }
 `;
 
 
@@ -34,7 +35,7 @@ function About() {
         </Head>
 
         <Header />
-        <main>
+        <Main>
             <h1>{ pageTitle }</h1>
             <p dangerouslySetInnerHTML={{ __html: pageText }}></p>
             <section>
@@ -58,32 +59,32 @@ function About() {
                         <li>アクセントカラーはメインカラーに対する補色で、表色系により位置が変わります</li>
                         <li>ベースカラーはメインカラーをコントラスト0-99%は薄く、101-200%は濃くした色です</li>
                     </ul>
-                    <Figure><Img src="img/initial.jpg" alt="初期画面" /></Figure>
+                    <figure><img src="img/initial.jpg" alt="初期画面" /></figure>
                 </section>
                 <section id="color_picker">
                     <h3>カラーピッカー</h3>
                     <p>カラーバーの下のパレットまたはHex値を押すとカラーピッカーが開きます。</p>
                     <p>下記の画面はPCのChromeブラウザで一つ目のメインカラーのカラーパレットを開いた画面です（なお、カラーピッカーの形状はブラウザによって異なります）。</p>
-                    <Figure>
-                        <Img src="img/cp01.jpg" alt="メインカラーのカラーピッカー" />
-                    </Figure>
+                    <figure>
+                        <img src="img/cp01.jpg" alt="メインカラーのカラーピッカー" />
+                    </figure>
                     <p>メインカラーのカラーピッカーを変更すると、アクセントカラー、ベースカラーも相関して変わります。</p>
                     <p>下記の図ではメインカラーの彩度(S)、明度(B)を変更したため、他の色の彩度(S)、明度(B)も変わっています</p>
-                    <Figure><Img src="img/cp02.jpg" alt="メインカラーの彩度、明度を変更" /></Figure>
+                    <figure><img src="img/cp02.jpg" alt="メインカラーの彩度、明度を変更" /></figure>
                     <p>メインカラーの色相(H)を変更すると他の色の色相(H)も変わります。</p>
-                    <Figure><Img src="img/cp03.jpg" alt="メインカラーの色相を変更" /></Figure>
+                    <figure><img src="img/cp03.jpg" alt="メインカラーの色相を変更" /></figure>
                     <p>下記の図は二つ目のアクセントカラーを開いたところ</p>
-                    <Figure><Img src="img/cp04.jpg" alt="アクセントカラーのピッカーを開く" /></Figure>
+                    <figure><img src="img/cp04.jpg" alt="アクセントカラーのピッカーを開く" /></figure>
                     <p>アクセントカラーの彩度(S)、明度(B)を変更すると他の色の彩度(S)、明度(B)も変わります</p>
-                    <Figure><Img src="img/cp05.jpg" alt="アクセントカラーの彩度、明度を変更" /></Figure>
+                    <figure><img src="img/cp05.jpg" alt="アクセントカラーの彩度、明度を変更" /></figure>
                     <p>アクセントカラーの色相(H)を変更すると他の色の色相(H)も変わります</p>
-                    <Figure><Img src="img/cp06.jpg" alt="アクセントカラーの色相を変更" /></Figure>
+                    <figure><img src="img/cp06.jpg" alt="アクセントカラーの色相を変更" /></figure>
                     <p>下記の図は三つ目のベースカラーを開いたところ</p>
-                    <Figure><Img src="img/cp07.jpg" alt="ベースカラーの色相を変更" /></Figure>
+                    <figure><img src="img/cp07.jpg" alt="ベースカラーの色相を変更" /></figure>
                     <p>ベースカラーの彩度(S)、明度(B)を変更すると他の色の彩度(S)、明度(B)も変わります（この時、メインカラーとのコントラストの位置関係を超える場合はコントラストが変わります）。</p>
-                    <Figure><Img src="img/cp08.jpg" alt="ベースカラーの彩度、明度を変更" /></Figure>
+                    <figure><img src="img/cp08.jpg" alt="ベースカラーの彩度、明度を変更" /></figure>
                     <p>ベースカラーの色相(H)を変更すると他の色の色相(H)も変わります</p>
-                    <Figure><Img src="img/cp09.jpg" alt="ベースカラーの色相を変更" /></Figure>
+                    <figure><img src="img/cp09.jpg" alt="ベースカラーの色相を変更" /></figure>
                 </section>
                 <section id="main_color">
                     <h3>メインカラー</h3>
@@ -110,7 +111,7 @@ function About() {
                 </section>
             </section>
             <Profile />
-        </main>
+        </Main>
         <Footer />
         </>
     );

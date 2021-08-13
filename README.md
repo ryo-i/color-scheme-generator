@@ -4,7 +4,7 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
-* 目次を追加 [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
+* CSSを外側のmainタグから指定 [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
 * フック名・変数名変更、型追加など [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
 
 ## ブログ
