@@ -76,7 +76,6 @@ function About() {
                     <figure><img src="img/initial.jpg" alt="初期画面" /></figure>
                     <p>メインカラー(25%)、アクセントカラー (5%)、ベースカラー(70%)の面積比についてはこちらを参照。</p>
                     <p>※参考：<a href="https://www.i-ryo.com/entry/2019/02/28/215606">【配色の基本】面積比（メイン、アクセント、ベース）と色相分割【Adobe Color CC】</a></p>
-
                 </section>
                 <section id="color_picker">
                     <h3>カラーピッカー</h3>
@@ -142,7 +141,6 @@ function About() {
                     <figure><img src="img/bc04.jpg" alt="ベースカラーのコントラストをさらに上げる" /></figure>
                     <p>コントラストを100%にするとベースカラーは真っ黒になります（彩度(S)が100、明度(B)が0）。</p>
                     <figure><img src="img/bc05.jpg" alt="ベースカラーのコントラストを100%に" /></figure>
-
                 </section>
             </section>
             <section>

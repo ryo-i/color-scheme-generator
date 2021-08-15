@@ -4,8 +4,9 @@ HSBベースでメインカラー、アクセントカラー、ベースカラ�
 
 ## 進捗
 
+* 改行削除など [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
 * 図に印を追加 [#25](https://github.com/ryo-i/color-scheme-generator/issues/25)
-* フック名・変数名変更、型追加など [#24](https://github.com/ryo-i/color-scheme-generator/issues/24)
+
 
 ## ブログ
 
