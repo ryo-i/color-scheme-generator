@@ -147,7 +147,7 @@ function About() {
                 <h2>詳細</h2>
                 <section>
                     <h3>ブログ</h3>
-                    <p><a href="https://www.i-ryo.com/entry/xxxx">タイトル - クモのようにコツコツと</a></p>
+                    <p><a href="https://www.i-ryo.com/entry/2021/08/16/184713">【React】配色ジェネレーターを作った（HSBでメインカラー、アクセントカラー、ベースカラーを割り出す！</a></p>
                 </section>
                 <section>
                     <h3>ソースコード（GitHub）</h3>
